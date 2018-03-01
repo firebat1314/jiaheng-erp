@@ -10,7 +10,7 @@ import { SimpleTableColumn, SimpleTableComponent } from '@delon/abc';
 export class TestpageComponent implements OnInit {
 
     params: any = {};
-    url = `/`;
+    url = `https://api.randomuser.me/?results=10`;
     @ViewChild('st') st: SimpleTableComponent;
     searchSchema: SFSchema = {
         properties: {

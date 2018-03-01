@@ -6,7 +6,6 @@ import { LayoutDefaultComponent } from '../layout/default/default.component';
 import { LayoutFullScreenComponent } from '../layout/fullscreen/fullscreen.component';
 import { LayoutPassportComponent } from '../layout/passport/passport.component';
 // dashboard pages
-import { DashboardComponent } from './dashboard/dashboard.component';
 // passport pages
 import { UserLoginComponent } from './passport/login/login.component';
 import { UserRegisterComponent } from './passport/register/register.component';
@@ -16,6 +15,7 @@ import { CallbackComponent } from './callback/callback.component';
 import { Exception403Component } from './exception/403.component';
 import { Exception404Component } from './exception/404.component';
 import { Exception500Component } from './exception/500.component';
+import { ErrorComponent } from './exception/error/error.component';
 import { TestpageComponent } from './testpage/testpage.component';
 
 const routes: Routes = [
@@ -23,11 +23,18 @@ const routes: Routes = [
         path: '',
         component: LayoutDefaultComponent,
         children: [
-            { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
-            { path: 'dashboard', component: DashboardComponent, data: { title: '仪表盘' } },
-            { path: 'test', component: TestpageComponent, data: { title: '111' } },
             // 业务子模块
-            // { path: 'widgets', loadChildren: './widgets/widgets.module#WidgetsModule' }
+            { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
+            { path: 'testssss', component: TestpageComponent, data: { title: '测试一下' } },
+            { path: 'business', loadChildren: './business/business.module#BusinessModule' },
+            { path: 'trade', loadChildren: './trade/trade.module#TradeModule' },
+            { path: 'market', loadChildren: './market/market.module#MarketModule' },
+            { path: 'entrepot', loadChildren: './entrepot/entrepot.module#EntrepotModule' },
+            { path: 'capital', loadChildren: './capital/capital.module#CapitalModule' },
+            { path: 'entrepot', loadChildren: './entrepot/entrepot.module#EntrepotModule' },
+            { path: 'material', loadChildren: './material/material.module#MaterialModule' },
+            { path: 'pos', loadChildren: './pos/pos.module#PosModule' },
+            { path: 'setting', loadChildren: './setting/setting.module#SettingModule' },
         ]
     },
     // 全屏布局
@@ -52,11 +59,12 @@ const routes: Routes = [
     { path: '403', component: Exception403Component },
     { path: '404', component: Exception404Component },
     { path: '500', component: Exception500Component },
-    { path: '**', redirectTo: 'dashboard' }
+    { path: 'error', component: ErrorComponent },
+    { path: '**', redirectTo: 'error' }
 ];
 
 @NgModule({
     imports: [RouterModule.forRoot(routes, { useHash: environment.useHash })],
     exports: [RouterModule]
-  })
+})
 export class RouteRoutingModule { }

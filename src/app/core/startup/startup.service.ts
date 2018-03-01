@@ -69,8 +69,8 @@ export class StartupService {
         // }
         // mock
         const app: any = {
-            name: `ng-alain`,
-            description: `Ng-zorro admin panel front-end framework`
+            name: `jingku-erp`,
+            description: `jingku-erp front-end admin panel`
         };
         const user: any = {
             name: 'Admin',
@@ -91,15 +91,22 @@ export class StartupService {
                 group: true,
                 children: [
                     {
-                        text: '仪表盘',
-                        link: '/dashboard',
+                        text: '电商',
+                        link: '/testssss',
+                        icon: 'icon-speedometer'
+                    },{
+                        text: '电商',
+                        link: '/testssss',
+                        icon: 'icon-speedometer'
+                    },{
+                        text: '电商',
+                        link: '/testssss',
+                        icon: 'icon-speedometer'
+                    },{
+                        text: '电商',
+                        link: '/testssss',
                         icon: 'icon-speedometer'
                     },
-                    {
-                        text: '快捷菜单',
-                        icon: 'icon-rocket',
-                        shortcut_root: true
-                    }
                 ]
             }
         ]);
