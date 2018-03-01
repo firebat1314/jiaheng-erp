@@ -1,6 +1,6 @@
 {
   "name": "jingku1",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "license": "MIT",
   "description": "ng-zorro-antd admin panel front-end framework",
   "engines": {
@@ -12,7 +12,7 @@
   "scripts": {
     "precommit": "npm run lint-staged",
     "ng": "ng",
-    "start": "ng serve -o",
+    "start": "ng serve -o -p 4222",
     "serve:hmr": "ng serve -o --hmr -e=hmr",
     "build": "ng build --prod --build-optimizer",
     "analyze": "ng build --prod --build-optimizer --stats-json",
