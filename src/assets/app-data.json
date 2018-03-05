@@ -32,13 +32,15 @@
                     "children": [
                         {
                             "text": "采购订单",
-                            "link": "/trade/order1"
-                        },{
+                            "link": "/trade/order"
+                        },
+                        {
                             "text": "采购入库单",
-                            "link": "/trade/warehousing1"
-                        },{
+                            "link": "/trade/warehousing"
+                        },
+                        {
                             "text": "采购退货单",
-                            "link": "/trade/returns1"
+                            "link": "/trade/returns"
                         }
                     ]
                 },
@@ -50,13 +52,16 @@
                         {
                             "text": "销售订单",
                             "link": "/market/order"
-                        },{
+                        },
+                        {
                             "text": "发票管理",
                             "link": "/market/invoice"
-                        },{
+                        },
+                        {
                             "text": "销售出库单",
                             "link": "/market/output"
-                        },{
+                        },
+                        {
                             "text": "销售退货单",
                             "link": "/market/returns"
                         }
@@ -70,19 +75,24 @@
                         {
                             "text": "拆卸单",
                             "link": "/entrepot/teardown"
-                        },{
+                        },
+                        {
                             "text": "盘点",
                             "link": "/entrepot/inventory"
-                        },{
+                        },
+                        {
                             "text": "其它出库单",
                             "link": "/entrepot/output"
-                        },{
+                        },
+                        {
                             "text": "其它入库单",
                             "link": "/entrepot/warehousing"
-                        },{
+                        },
+                        {
                             "text": "组装单",
                             "link": "/entrepot/fitting"
-                        },{
+                        },
+                        {
                             "text": "调拨单",
                             "link": "/entrepot/allocate"
                         }
@@ -96,19 +106,24 @@
                         {
                             "text": "付款单",
                             "link": "/capital/pay"
-                        },{
+                        },
+                        {
                             "text": "核销单",
                             "link": "/capital/verification"
-                        },{
+                        },
+                        {
                             "text": "其他收入单",
                             "link": "/capital/other-revenue"
-                        },{
+                        },
+                        {
                             "text": "其他支出单",
                             "link": "/capital/other-expenses"
-                        },{
+                        },
+                        {
                             "text": "转账单",
                             "link": "/capital/transfer"
-                        },{
+                        },
+                        {
                             "text": "收款单",
                             "link": "/capital/proceeds"
                         }
@@ -122,28 +137,36 @@
                         {
                             "text": "仓储管理",
                             "link": "/material/cpm"
-                        },{
+                        },
+                        {
                             "text": "供应商管理",
                             "link": "/material/cqe"
-                        },{
+                        },
+                        {
                             "text": "计量单位管理",
                             "link": "/material/measure-unit"
-                        },{
+                        },
+                        {
                             "text": "客户管理",
                             "link": "/material/crm"
-                        },{
+                        },
+                        {
                             "text": "商品管理",
                             "link": "/material/merchandise-c"
-                        },{
+                        },
+                        {
                             "text": "结算方法",
                             "link": "/material/settlement-method"
-                        },{
+                        },
+                        {
                             "text": "仓库管理",
                             "link": "/material/wms"
-                        },{
+                        },
+                        {
                             "text": "职员管理",
                             "link": "/material/personnel-admin"
-                        },{
+                        },
+                        {
                             "text": "商品品牌",
                             "link": "/material/brand"
                         }

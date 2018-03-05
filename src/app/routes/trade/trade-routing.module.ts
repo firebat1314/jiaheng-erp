@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { OrderListComponent } from './order-list/order-list.component';
-import { OrderReturnsComponent } from '../market/order-returns/order-returns.component';
 import { OrderWarehousingComponent } from './order-warehousing/order-warehousing.component';
+import { OrderReturnsComponent } from './order-returns/order-returns.component';
 
 const routes: Routes = [
-  { path: 'order1', component: OrderListComponent },//采购订单
-  { path: 'returns1', component: OrderReturnsComponent },//退货单
-  { path: 'warehousing1', component: OrderWarehousingComponent },//其他入库单
+  { path: 'order', component: OrderListComponent },//采购订单
+  { path: 'returns', component: OrderReturnsComponent },//退货单
+  { path: 'warehousing', component: OrderWarehousingComponent }//其他入库单
 ];
 
 @NgModule({
