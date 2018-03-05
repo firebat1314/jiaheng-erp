@@ -13,7 +13,7 @@ import { Exception403Component } from './exception/403.component';
 import { Exception404Component } from './exception/404.component';
 import { Exception500Component } from './exception/500.component';
 import { ErrorComponent } from './exception/error/error.component';
-import { TestpageComponent } from './testpage/testpage.component';
+import { ForgetPasswordComponent } from './passport/forget-password/forget-password.component';
 
 @NgModule({
     imports: [ SharedModule, RouteRoutingModule ],
@@ -28,7 +28,7 @@ import { TestpageComponent } from './testpage/testpage.component';
         Exception404Component,
         Exception500Component,
         ErrorComponent,
-        TestpageComponent,
+        ForgetPasswordComponent,
     ]
 })
 export class RoutesModule {}

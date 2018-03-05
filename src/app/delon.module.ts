@@ -57,7 +57,7 @@ import {
     NzCollapseModule,
     NzTimelineModule,
     NzToolTipModule,
-    // NzBackTopModule,
+    NzBackTopModule,
     // NzAffixModule,
     // NzAnchorModule,
     NzAvatarModule,
@@ -109,7 +109,7 @@ export const ZORROMODULES = [
     NzCollapseModule,
     NzTimelineModule,
     NzToolTipModule,
-    // NzBackTopModule,
+    NzBackTopModule,
     // NzAffixModule,
     // NzAnchorModule,
     NzAvatarModule,
@@ -120,7 +120,7 @@ export const ZORROMODULES = [
 // region: @delon/abc modules
 import {
     AdSimpleTableModule,
-    // AdReuseTabModule,
+    AdReuseTabModule,
     AdAvatarListModule,
     AdChartsModule,
     AdCountDownModule,
@@ -143,11 +143,11 @@ import {
     AdUtilsModule,
     AdFullContentModule,
     AdXlsxModule,
-    AdZipModule
+    AdZipModule,
 } from '@delon/abc';
 export const ABCMODULES = [
     AdSimpleTableModule,
-    // AdReuseTabModule,
+    AdReuseTabModule,
     AdAvatarListModule,
     AdChartsModule,
     AdCountDownModule,
@@ -193,7 +193,10 @@ import { DelonCacheModule } from '@delon/cache';
 
 @NgModule({
     imports: [
-        NgZorroAntdModule.forRoot(),
+        NgZorroAntdModule.forRoot({
+            extraFontName:'je',
+            extraFontUrl:'./assets/fonts/iconfont'
+        }),
         NgZorroAntdExtraModule.forRoot(),
         // theme
         AlainThemeModule.forRoot(),
@@ -202,7 +205,7 @@ import { DelonCacheModule } from '@delon/cache';
         AdAvatarListModule.forRoot(), AdDescListModule.forRoot(), AdEllipsisModule.forRoot(), AdExceptionModule.forRoot(), AdExceptionModule.forRoot(),
         AdNoticeIconModule.forRoot(), AdNumberInfoModule.forRoot(), AdProHeaderModule.forRoot(), AdResultModule.forRoot(), AdStandardFormRowModule.forRoot(),
         AdTagSelectModule.forRoot(), AdTrendModule.forRoot(), AdUtilsModule.forRoot(), AdChartsModule.forRoot(), AdCountDownModule.forRoot(), AdSimpleTableModule.forRoot(),
-        // AdReuseTabModule.forRoot(),
+        AdReuseTabModule.forRoot(),
         AdFullContentModule.forRoot(), AdXlsxModule.forRoot(), AdZipModule.forRoot(),
         // auth
         AlainAuthModule.forRoot({

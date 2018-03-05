@@ -2,7 +2,62 @@
     <div class="router-progress-bar" *ngIf="isFetching"></div>
     <app-header class="header"></app-header>
     <app-sidebar class="aside"></app-sidebar>
-    <section class="content">
+    <section class="content" #divTarget>
+        <nz-back-top [nzTarget]="divTarget"></nz-back-top>
+        <reuse-tab></reuse-tab>
         <router-outlet></router-outlet>
     </section>
 </div>
+<!-- <div class="router-progress-bar" *ngIf="isFetching">
+</div>
+<nz-layout>
+    <nz-sider nzCollapsible [(nzCollapsed)]="isCollapsed" [nzTrigger]="null">
+        <div class="logo">
+        </div>
+        <ul nz-menu [nzTheme]="'dark'" [nzMode]="isCollapsed?'vertical':'inline'">
+            <li nz-submenu>
+                <span title>
+                    <i class="anticon anticon-user"></i>
+                    <span class="nav-text">User</span>
+                </span>
+                <ul>
+                    <li nz-menu-item routerLink="/business">Tom</li>
+                    <li nz-menu-item routerLink="/trade">Bill</li>
+                    <li nz-menu-item routerLink="/market">Alex</li>
+                </ul>
+            </li>
+            <li nz-submenu>
+                <span title>
+                    <i class="anticon anticon-team"></i>
+                    <span class="nav-text">Team</span>
+                </span>
+                <ul>
+                    <li nz-menu-item>Team 1</li>
+                    <li nz-menu-item>Team 2</li>
+                </ul>
+            </li>
+            <li nz-menu-item>
+                <span>
+                    <i class="anticon anticon-file"></i>
+                    <span class="nav-text">File</span>
+                </span>
+            </li>
+        </ul>
+    </nz-sider>
+    <nz-layout>
+        <nz-header style="background: #fff; padding:0;">
+            <i class="anticon trigger" [class.anticon-menu-fold]="!isCollapsed" [class.anticon-menu-unfold]="isCollapsed" (click)="isCollapsed=!isCollapsed"></i>
+        </nz-header>
+        <nz-content style="margin:0 16px;">
+            <div #divTarget>
+                <nz-back-top [nzTarget]="divTarget"></nz-back-top>
+                <reuse-tab></reuse-tab>
+                <router-outlet></router-outlet>
+                <div style="padding:24px; background: #fff; min-height: 360px;">
+                    Bill is a cat.
+                </div>
+            </div>
+        </nz-content>
+        <nz-footer style="text-align: center;">Ant Design ©2017 Implement By Angular</nz-footer>
+    </nz-layout>
+</nz-layout> -->

@@ -85,31 +85,7 @@ export class StartupService {
         // ACL：设置权限为全量
         this.aclService.setFull(true);
         // 初始化菜单
-        this.menuService.add([
-            {
-                text: '主导航',
-                group: true,
-                children: [
-                    {
-                        text: '电商',
-                        link: '/testssss',
-                        icon: 'icon-speedometer'
-                    },{
-                        text: '电商',
-                        link: '/testssss',
-                        icon: 'icon-speedometer'
-                    },{
-                        text: '电商',
-                        link: '/testssss',
-                        icon: 'icon-speedometer'
-                    },{
-                        text: '电商',
-                        link: '/testssss',
-                        icon: 'icon-speedometer'
-                    },
-                ]
-            }
-        ]);
+        this.menuService.add([]);
         // 设置页面标题的后缀
         this.titleService.suffix = app.name;
 
@@ -121,9 +97,9 @@ export class StartupService {
         // https://github.com/angular/angular/issues/15088
         return new Promise((resolve, reject) => {
             // http
-            // this.viaHttp(resolve, reject);
+            this.viaHttp(resolve, reject);
             // mock
-            this.viaMock(resolve, reject);
+            // this.viaMock(resolve, reject);
         });
     }
 }

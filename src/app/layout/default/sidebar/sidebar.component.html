@@ -1,5 +1,5 @@
 <div class="aside-inner">
-    <nz-dropdown nzTrigger="click" class="user-block clearfix">
+    <!-- <nz-dropdown nzTrigger="click" class="user-block clearfix">
         <div nz-dropdown class="user-block-dropdown">
             <nz-avatar class="avatar" [nzIcon]="'user'" [nzSize]="'large'"></nz-avatar>
             <div class="info">
@@ -12,6 +12,12 @@
             <li nz-menu-item (click)="msgSrv.success('settings')">{{ 'settings' | translate }}</li>
             <li nz-menu-item (click)="msgSrv.success('logout')">{{ 'logout' | translate }}</li>
         </ul>
-    </nz-dropdown>
-    <sidebar-nav class="d-block py-lg"></sidebar-nav>
+    </nz-dropdown> -->
+    <div class="logo">
+            <a [routerLink]="['/']">
+                <img class="expanded" src="./assets/img/jingku_logo.png" alt="{{settings.app.name}}" style="max-height:40px;" />
+                <img class="collapsed" src="./assets/img/jingku_logo.png" alt="{{settings.app.name}}" style="max-height:22px;" />
+            </a>
+        </div>
+    <sidebar-nav class="d-block"></sidebar-nav>
 </div>

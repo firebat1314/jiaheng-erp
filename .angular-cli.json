@@ -62,7 +62,7 @@
     "schematics": {
       "collection": "@delon/cli"
     },
-    "styleExt": "scss",
+    "styleExt": "less",
     "class": {
         "spec": false
     },

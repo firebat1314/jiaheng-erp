@@ -1,0 +1,189 @@
+<div nz-row nzGutter="32" style="padding-top: 16px;">
+    <div nz-col nzXs="24" nzSm="12" nzMd="4" class="mb-md">
+        <div nz-row nzType="flex" nzAlign="middle" style="background: #18bff3;" class="s-home-label">
+            <div nz-col nzSpan="16" class="p-md text-white">
+                <p class="text-nowrap">库存预警</p>
+                <div class="h2 mt0">123,456</div>
+            </div>
+            <div nz-col nzSpan="8" class="icon">
+                <img src="./assets/img/home/1.png" alt="">
+                <!-- <mini-bar height="35" color="#fff" borderWidth="3" [padding]="[36, 30, 30, 30]" [data]="webSite"></mini-bar> -->
+            </div>
+        </div>
+    </div>
+    <div nz-col nzXs="24" nzSm="12" nzMd="4" class="mb-md">
+        <div nz-row nzType="flex" nzAlign="middle" style="background: #ce84de;" class="s-home-label">
+            <div nz-col nzSpan="16" class="p-md text-white">
+                <p class="text-nowrap">未发货销货订单</p>
+                <div class="h2 mt0">123,456</div>
+            </div>
+            <div nz-col nzSpan="8" class="icon">
+                <img src="./assets/img/home/2.png" alt="">
+                <!-- <mini-bar height="35" color="#fff" borderWidth="3" [padding]="[36, 30, 30, 30]" [data]="webSite"></mini-bar> -->
+            </div>
+        </div>
+    </div>
+    <div nz-col nzXs="24" nzSm="12" nzMd="4" class="mb-md">
+        <div nz-row nzType="flex" nzAlign="middle" style="background: #55da8d;" class="s-home-label">
+            <div nz-col nzSpan="16" class="p-md text-white">
+                <p class="text-nowrap">今日购货笔数</p>
+                <div class="h2 mt0">123,456</div>
+            </div>
+            <div nz-col nzSpan="8" class="icon">
+                <img src="./assets/img/home/3.png" alt="">
+                <!-- <mini-bar height="35" color="#fff" borderWidth="3" [padding]="[36, 30, 30, 30]" [data]="webSite"></mini-bar> -->
+            </div>
+        </div>
+    </div>
+    <div nz-col nzXs="24" nzSm="12" nzMd="4" class="mb-md">
+        <div nz-row nzType="flex" nzAlign="middle" style="background: #f8bb39;" class="s-home-label">
+            <div nz-col nzSpan="16" class="p-md text-white">
+                <p class="text-nowrap">今天销货笔数</p>
+                <div class="h2 mt0">456</div>
+            </div>
+            <div nz-col nzSpan="8" class="icon">
+                <img src="./assets/img/home/4.png" alt="">
+                <!-- <mini-bar height="35" color="#fff" borderWidth="3" [padding]="[36, 30, 30, 30]" [data]="webSite"></mini-bar> -->
+            </div>
+        </div>
+    </div>
+    <div nz-col nzXs="24" nzSm="12" nzMd="4" class="mb-md">
+        <div nz-row nzType="flex" nzAlign="middle" style="background: #779cdb;" class="s-home-label">
+            <div nz-col nzSpan="16" class="p-md text-white">
+                <p class="text-nowrap">今天收款笔数</p>
+                <div class="h2 mt0">456</div>
+            </div>
+            <div nz-col nzSpan="8" class="icon">
+                <img src="./assets/img/home/5.png" alt="">
+                <!-- <mini-bar height="35" color="#fff" borderWidth="3" [padding]="[36, 30, 30, 30]" [data]="webSite"></mini-bar> -->
+            </div>
+        </div>
+    </div>
+</div>
+<div nz-row nzGutter="16">
+    <div nz-col nzXs="24" nzMd="18">
+        <nz-card [nzBordered]="false">
+            <ng-template #title>
+                <div class="sales-type-radio">
+                    <nz-radio-group [(ngModel)]="salesType" (ngModelChange)="changeSaleType()" [nzSize]="'large'">
+                        <label nz-radio-button [nzValue]="'xiao'">
+                            <span>销货</span>
+                        </label>
+                        <label nz-radio-button [nzValue]="'gou'">
+                            <span>购货</span>
+                        </label>
+                        <label nz-radio-button [nzValue]="'cang'">
+                            <span>仓库</span>
+                        </label>
+                    </nz-radio-group>
+                </div>
+            </ng-template>
+            <ng-template #extra>
+                <div class="sales-extra-wrap">
+                    <nz-datepicker style="width:120px" class="mr-md" [(ngModel)]="q.start" [nzFormat]="'YYYY-MM-DD'" [nzPlaceHolder]="'开始日期'"></nz-datepicker>
+                    <nz-datepicker style="width:120px" [(ngModel)]="q.end" [nzFormat]="'YYYY-MM-DD'" [nzPlaceHolder]="'结束日期'"></nz-datepicker>
+                    <nz-dropdown style="margin-left: 16px;">
+                        <a class="ant-dropdown-link" nz-dropdown>
+                            {{selectDate||'选择'}}
+                            <i class="anticon anticon-down"></i>
+                        </a>
+                        <ul nz-menu>
+                            <li nz-menu-item>
+                                <a (click)="setDate('today','今日')">今日</a>
+                            </li>
+                            <li nz-menu-item>
+                                <a (click)="setDate('week','本周')">本周</a>
+                            </li>
+                            <li nz-menu-item>
+                                <a (click)="setDate('month','本月')">本月</a>
+                            </li>
+                            <li nz-menu-item>
+                                <a (click)="setDate('year','全年')">全年</a>
+                            </li>
+                        </ul>
+                    </nz-dropdown>
+                </div>
+            </ng-template>
+            <bar height="275" [data]="salesData"></bar>
+        </nz-card>
+    </div>
+    <div nz-col nzXs="24" nzMd="6">
+        <nz-card [nzTitle]="nzTitle" [nzBordered]="false">
+            <ng-template #nzTitle>
+                <div class="sales-type-radio">
+                    <nz-radio-group [(ngModel)]="salesType1" [nzSize]="'large'">
+                        <label nz-radio-button [nzValue]="0">
+                            <span>常用数据</span>
+                        </label>
+                        <label nz-radio-button [nzValue]="1">
+                            <span>相关数据</span>
+                        </label>
+                    </nz-radio-group>
+                </div>
+            </ng-template>
+            <div *ngIf="salesType1==0" nz-row class="home-tools">
+                <div nz-col nzXs="12" nzSm='8' nzMd="6" class="an">
+                    <!-- nzXs="12" nzSm='18' nzMd="24" -->
+                    <img src="./assets/img/home/cy_03.png" alt="">
+                    <span>购货单</span>
+                </div>
+                <div nz-col nzXs="12" nzSm='8' nzMd="6" class="an">
+                    <img src="./assets/img/home/cy_06.png" alt="">
+                    <span>销货单</span>
+                </div>
+                <div nz-col nzXs="12" nzSm='8' nzMd="6" class="an">
+                    <img src="./assets/img/home/cy_11.png" alt="">
+                    <span>调拨单</span>
+                </div>
+                <div nz-col nzXs="12" nzSm='8' nzMd="6" class="an">
+                    <img src="./assets/img/home/cy_13.png" alt="">
+                    <span>收款单</span>
+                </div>
+                <div nz-col nzXs="12" nzSm='8' nzMd="6" class="an">
+                    <img src="./assets/img/home/cy_17.png" alt="">
+                    <span>盘点</span>
+                </div>
+                <div nz-col nzXs="12" nzSm='8' nzMd="6" class="an">
+                    <img src="./assets/img/home/cy_19.png" alt="">
+                    <span>已销订购</span>
+                </div>
+                <div nz-col nzXs="12" nzSm='8' nzMd="6" class="an">
+                    <img src="./assets/img/home/cy_22.png" alt="">
+                    <span>结账反结账</span>
+                </div>
+                <div nz-col nzXs="12" nzSm='8' nzMd="6" class="an">
+                    <img src="./assets/img/home/cy_23.png" alt="">
+                    <span>增值服务</span>
+                </div>
+            </div>
+            <div *ngIf="salesType1==1" nz-row class="home-tools">
+                    <div nz-col nzXs="12" nzSm='8' nzMd="6" class="an">
+                        <!-- nzXs="12" nzSm='18' nzMd="24" -->
+                        <img src="./assets/img/home/cy_03.png" alt="">
+                        <span>购货单</span>
+                    </div>
+                    <div nz-col nzXs="12" nzSm='8' nzMd="6" class="an">
+                        <img src="./assets/img/home/cy_06.png" alt="">
+                        <span>销货单</span>
+                    </div>
+                    <div nz-col nzXs="12" nzSm='8' nzMd="6" class="an">
+                        <img src="./assets/img/home/cy_11.png" alt="">
+                        <span>调拨单</span>
+                    </div>
+                    <div nz-col nzXs="12" nzSm='8' nzMd="6" class="an">
+                        <img src="./assets/img/home/cy_13.png" alt="">
+                        <span>收款单</span>
+                    </div>
+                    <div nz-col nzXs="12" nzSm='8' nzMd="6" class="an">
+                        <img src="./assets/img/home/cy_17.png" alt="">
+                        <span>盘点</span>
+                    </div>
+                    <div nz-col nzXs="12" nzSm='8' nzMd="6" class="an">
+                        <img src="./assets/img/home/cy_19.png" alt="">
+                        <span>已销订购</span>
+                    </div>
+                </div>
+        </nz-card>
+    </div>
+</div>
+<i class="je je-tuichu"></i>

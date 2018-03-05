@@ -1,0 +1,177 @@
+{
+    "app": {
+        "name": "jingkuErp",
+        "description": "jingkuErp front-end admin panel"
+    },
+    "user": {
+        "name": "sss",
+        "avatar": "./assets/img/zorro.svg",
+        "email": ""
+    },
+    "menu": [
+        {
+            "text": "主导航",
+            "group": true,
+            "children": [
+                {
+                    "text": "电商",
+                    "link": "/business",
+                    "icon": "icon-speedometer",
+                    "children": [
+                        {
+                            "text": "购货订单",
+                            "link": "/home",
+                            "reuse": false
+                        }
+                    ]
+                },
+                {
+                    "text": "购货",
+                    "link": "/trade",
+                    "icon": "icon-speedometer",
+                    "children": [
+                        {
+                            "text": "采购订单",
+                            "link": "/trade/order1"
+                        },{
+                            "text": "采购入库单",
+                            "link": "/trade/warehousing1"
+                        },{
+                            "text": "采购退货单",
+                            "link": "/trade/returns1"
+                        }
+                    ]
+                },
+                {
+                    "text": "销货",
+                    "link": "/market",
+                    "icon": "icon-speedometer",
+                    "children": [
+                        {
+                            "text": "销售订单",
+                            "link": "/market/order"
+                        },{
+                            "text": "发票管理",
+                            "link": "/market/invoice"
+                        },{
+                            "text": "销售出库单",
+                            "link": "/market/output"
+                        },{
+                            "text": "销售退货单",
+                            "link": "/market/returns"
+                        }
+                    ]
+                },
+                {
+                    "text": "仓库",
+                    "link": "/entrepot",
+                    "icon": "icon-speedometer",
+                    "children": [
+                        {
+                            "text": "拆卸单",
+                            "link": "/entrepot/teardown"
+                        },{
+                            "text": "盘点",
+                            "link": "/entrepot/inventory"
+                        },{
+                            "text": "其它出库单",
+                            "link": "/entrepot/output"
+                        },{
+                            "text": "其它入库单",
+                            "link": "/entrepot/warehousing"
+                        },{
+                            "text": "组装单",
+                            "link": "/entrepot/fitting"
+                        },{
+                            "text": "调拨单",
+                            "link": "/entrepot/allocate"
+                        }
+                    ]
+                },
+                {
+                    "text": "资金",
+                    "link": "/capital",
+                    "icon": "icon-speedometer",
+                    "children": [
+                        {
+                            "text": "付款单",
+                            "link": "/capital/pay"
+                        },{
+                            "text": "核销单",
+                            "link": "/capital/verification"
+                        },{
+                            "text": "其他收入单",
+                            "link": "/capital/other-revenue"
+                        },{
+                            "text": "其他支出单",
+                            "link": "/capital/other-expenses"
+                        },{
+                            "text": "转账单",
+                            "link": "/capital/transfer"
+                        },{
+                            "text": "收款单",
+                            "link": "/capital/proceeds"
+                        }
+                    ]
+                },
+                {
+                    "text": "资料",
+                    "link": "/material",
+                    "icon": "icon-speedometer",
+                    "children": [
+                        {
+                            "text": "仓储管理",
+                            "link": "/material/cpm"
+                        },{
+                            "text": "供应商管理",
+                            "link": "/material/cqe"
+                        },{
+                            "text": "计量单位管理",
+                            "link": "/material/measure-unit"
+                        },{
+                            "text": "客户管理",
+                            "link": "/material/crm"
+                        },{
+                            "text": "商品管理",
+                            "link": "/material/merchandise-c"
+                        },{
+                            "text": "结算方法",
+                            "link": "/material/settlement-method"
+                        },{
+                            "text": "仓库管理",
+                            "link": "/material/wms"
+                        },{
+                            "text": "职员管理",
+                            "link": "/material/personnel-admin"
+                        },{
+                            "text": "商品品牌",
+                            "link": "/material/brand"
+                        }
+                    ]
+                },
+                {
+                    "text": "云POS",
+                    "link": "/pos",
+                    "icon": "icon-speedometer",
+                    "children": [
+                        {
+                            "text": "购货订单",
+                            "link": "/capital/pay"
+                        }
+                    ]
+                },
+                {
+                    "text": "设置",
+                    "link": "/setting",
+                    "icon": "icon-speedometer",
+                    "children": [
+                        {
+                            "text": "购货订单",
+                            "link": "/capital/pay"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

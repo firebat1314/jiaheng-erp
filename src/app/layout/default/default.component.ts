@@ -5,7 +5,8 @@ import { ScrollService, MenuService, SettingsService } from '@delon/theme';
 
 @Component({
     selector: 'layout-default',
-    templateUrl: './default.component.html'
+    templateUrl: './default.component.html',
+    styleUrls:['./default.component.less']
 })
 export class LayoutDefaultComponent {
     isFetching = false;

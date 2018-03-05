@@ -16,7 +16,7 @@ import { Exception403Component } from './exception/403.component';
 import { Exception404Component } from './exception/404.component';
 import { Exception500Component } from './exception/500.component';
 import { ErrorComponent } from './exception/error/error.component';
-import { TestpageComponent } from './testpage/testpage.component';
+import { ForgetPasswordComponent } from './passport/forget-password/forget-password.component';
 
 const routes: Routes = [
     {
@@ -24,8 +24,8 @@ const routes: Routes = [
         component: LayoutDefaultComponent,
         children: [
             // 业务子模块
-            { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
-            { path: 'testssss', component: TestpageComponent, data: { title: '测试一下' } },
+            { path: '', redirectTo: 'home', pathMatch: 'full' },
+            { path: 'home', loadChildren: './home/home.module#HomeModule' },
             { path: 'business', loadChildren: './business/business.module#BusinessModule' },
             { path: 'trade', loadChildren: './trade/trade.module#TradeModule' },
             { path: 'market', loadChildren: './market/market.module#MarketModule' },
@@ -38,12 +38,12 @@ const routes: Routes = [
         ]
     },
     // 全屏布局
-    // {
-    //     path: 'fullscreen',
-    //     component: LayoutFullScreenComponent,
-    //     children: [
-    //     ]
-    // },
+    {
+        path: 'fullscreen',
+        component: LayoutFullScreenComponent,
+        children: [
+        ]
+    },
     // passport
     {
         path: 'passport',
@@ -51,7 +51,8 @@ const routes: Routes = [
         children: [
             { path: 'login', component: UserLoginComponent },
             { path: 'register', component: UserRegisterComponent },
-            { path: 'register-result', component: UserRegisterResultComponent }
+            { path: 'register-result', component: UserRegisterResultComponent },
+            { path: 'forget-password', component: ForgetPasswordComponent }
         ]
     },
     // 单页不包裹Layout
@@ -60,7 +61,7 @@ const routes: Routes = [
     { path: '404', component: Exception404Component },
     { path: '500', component: Exception500Component },
     { path: 'error', component: ErrorComponent },
-    { path: '**', redirectTo: 'error' }
+    { path: '**', redirectTo: '404' }
 ];
 
 @NgModule({
