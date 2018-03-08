@@ -1,0 +1,112 @@
+<div class="head">
+    <div class="date">
+        <span>日期：</span>
+        <nz-datepicker [(ngModel)]="_date"></nz-datepicker>
+        <nz-select style="width: 120px;" [(ngModel)]="selectedOption" [nzPlaceHolder]="'全部仓库'" nzAllowClear>
+            <nz-option *ngFor="let option of options" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
+            </nz-option>
+        </nz-select>
+        <nz-select style="width: 120px;" [(ngModel)]="selectedOption" [nzPlaceHolder]="'类别'" nzAllowClear>
+            <nz-option *ngFor="let option of options" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
+            </nz-option>
+        </nz-select>
+    </div>
+    <div class="goods">
+        商品：
+        <nz-input [(ngModel)]="inputValue" [nzPlaceHolder]="'商品'" (ngModelChange)="_console($event)"></nz-input>
+        <label nz-checkbox (ngModelChange)="_console($event)">
+            <span>零库存</span>
+        </label>
+        <label nz-checkbox (ngModelChange)="_console($event)">
+            <span>显示禁用商品</span>
+        </label>
+    </div>
+    <button nz-button [nzType]="'primary'">
+        <span>查询</span>
+    </button>
+</div>
+<div class="s-main">
+    <div class="table-hd">
+        <div>
+            <span>
+                <i class="anticon anticon-setting"></i>
+            </span>
+            <span>列设置</span>
+        </div>
+        <div class="btns">
+            <button nz-button [nzType]="'primary'">
+                <span>保存盘点结果</span>
+            </button>
+            <button nz-button [nzType]="'primary'">
+                <span>保存系统库存</span>
+            </button>
+            <button nz-button [nzType]="'primary'">
+                <span>导入盘点库存</span>
+            </button>
+            <button nz-button [nzType]="'primary'">
+                <span>生成盘点单据</span>
+            </button>
+        </div>
+    </div>
+    <div class="table-m">
+        <nz-table #nzTable [nzScroll]="_fixHeader?{ y: 640 }:null" [nzDataSource]="_dataSet" [nzBordered]="_bordered" [nzLoading]="_loading" [nzIsPagination]="_pagination" [nzPageSize]="50" nzShowTotal nzShowSizeChanger nzShowQuickJumper [nzShowFooter]="_footer" [nzShowTitle]="_title" [nzSize]="_size" [nzCustomNoResult]="true" nzPageSizeSelectorValues>
+            <span nz-table-title>Title</span>
+            <span noResult>暂无数据</span>
+            <ng-template #nzFixedHeader [ngIf]="_header&&!_fixHeader">
+                <thead nz-thead>
+                    <tr>
+                        <th nz-th [nzWidth]="'70px'">
+                            <span>仓库</span>
+                        </th>
+                        <th nz-th [nzWidth]="'70px'">
+                            <span>商品类别</span>
+                        </th>
+                        <th nz-th [nzWidth]="'70px'">
+                            <span>商品编号</span>
+                        </th>
+                        <th nz-th [nzWidth]="'70px'">
+                            <span>商品名称</span>
+                        </th>
+                        <th nz-th [nzWidth]="'70px'">
+                            <span>规格型号</span>
+                        </th>
+                        <th nz-th [nzWidth]="'70px'">
+                            <span>单位</span>
+                        </th>
+                        <th nz-th [nzWidth]="'70px'">
+                            <span>系统库存</span>
+                        </th>
+                        <th nz-th [nzWidth]="'70px'">
+                            <span>
+                                <i style="color:#e60000;">*</i>盘点库存</span>
+                        </th>
+                        <th nz-th [nzWidth]="'70px'">
+                            <span>盘盈盘亏</span>
+                        </th>
+                    </tr>
+                </thead>
+            </ng-template>
+            <tbody nz-tbody>
+                <tr nz-tbody-tr *ngFor="let data of nzTable.data">
+                    <td nz-td>{{data.a}}</td>
+                    <td nz-td>{{data.b}}</td>
+                    <td nz-td>{{data.c}}</td>
+                    <td nz-td>{{data.d}}</td>
+                    <td nz-td>{{data.e}}</td>
+                    <td nz-td>{{data.f}}</td>
+                    <td nz-td>{{data.g}}</td>
+                    <td nz-td>{{data.h}}</td>
+                    <td nz-td>
+                        <span>
+                            <a>{{data.m}}</a>
+                            <span nz-table-divider></span>
+                            <a>删除</a>
+                            <span nz-table-divider></span>
+                        </span>
+                    </td>
+                </tr>
+            </tbody>
+            <span nz-table-footer>footer</span>
+        </nz-table>
+    </div>
+</div>

@@ -1,4 +1,224 @@
-<div class="content__title">
-    <h1>Page Name</h1>
+<div class="s-wrap">
+    <div class="s-header">
+        <div class="h-w">
+            <div class="sub left">
+                <div class="item">
+                    <span>单据日期：</span>
+                    <nz-datepicker></nz-datepicker>
+                </div>
+            </div>
+            <div class="sub right">
+                <div class="item">单据编号：4545454545454
+                    <i class="anticon anticon-edit"></i>
+                </div>
+                <button nz-button [nzType]="'primary'">
+                    <span>保存并新增</span>
+                </button>
+                <button nz-button [nzType]="'default'">
+                    <span>保存</span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="s-main">
+        <div class="m-top">
+            <div>
+                <span>
+                    <i class="anticon anticon-setting"></i>
+                </span>
+                <span>列设置</span>
+            </div>
+            <div>
+                <span>扫描枪录入</span>
+                <nz-switch [nzSize]="'small'"></nz-switch>
+            </div>
+            <div>
+                <label nz-checkbox (ngModelChange)="_console($event)">
+                    <span>自动备份</span>
+                </label>
+            </div>
+            <div>
+                <button>选择模板</button>
+                <button>存为模板</button>
+            </div>
+        </div>
+        <div class="m-table">
+            <div class="title">组合件：</div>
+            <nz-table #nzTable [nzScroll]="_fixHeader?{ y: 640 }:null" [nzDataSource]="_dataSet" [nzBordered]="_bordered" [nzLoading]="_loading"
+                [nzIsPagination]="false" [nzPageSize]="50" nzShowTotal nzShowQuickJumper nzShowSizeChanger [nzShowFooter]="_footer"
+                [nzShowTitle]="_title" [nzSize]="_size" [nzCustomNoResult]="true">
+                <span nz-table-title>Title</span>
+                <span noResult>暂无数据</span>
+                <ng-template #nzFixedHeader [ngIf]="_header&&!_fixHeader">
+                    <thead nz-thead>
+                        <tr>
+                            <th nz-th [nzWidth]="'170px'">
+                                <span>
+                                    <i class="anticon anticon-setting"></i>
+                                </span>
+                            </th>
+                            <th nz-th [nzWidth]="'170px'">
+                                <span>
+                                    <i style="color: #e60000;">*</i>商品</span>
+                            </th>
+                            <th nz-th [nzWidth]="'170px'">
+                                <span>单位</span>
+                            </th>
+                            <th nz-th [nzWidth]="'170px'">
+                                <span>
+                                    <i style="color: #e60000;">*</i>仓库</span>
+                            </th>
+                            <th nz-th [nzWidth]="'170px'">
+                                <span>
+                                    <i style="color: #e60000;">*</i>数量</span>
+                            </th>
+                            <th nz-th [nzWidth]="'170px'">
+                                <span>
+                                    <i style="color: #e60000;">*</i>出库单位成本</span>
+                            </th>
+                            <th nz-th [nzWidth]="'170px'">
+                                <span>
+                                    <i style="color: #e60000;">*</i>出库成本</span>
+                            </th>
+                            <th nz-th>
+                                &nbsp;
+                            </th>
+                        </tr>
+                    </thead>
+                </ng-template>
+                <tbody nz-tbody>
+                    <tr nz-tbody-tr>
+                        <td nz-td>1</td>
+                        <td nz-td>
+                            <nz-upload nzAction="" nzSize="small">
+                                <button nz-button>
+                                    <i class="anticon anticon-upload"></i>
+                                    <span>选择</span>
+                                </button>
+                            </nz-upload>
+                        </td>
+                        <td nz-td>
+                            <nz-input [nzPlaceHolder]="'单位'"></nz-input>
+                        </td>
+                        <td nz-td>
+                            <nz-select style="width: 120px;" [nzPlaceHolder]="'选择仓库'" nzAllowClear>
+                                <nz-option [nzLabel]="1" [nzValue]="1" [nzDisabled]="false"></nz-option>
+                            </nz-select>
+                        </td>
+                        <td nz-td>
+                            <nz-input [nzPlaceHolder]="'数量'"></nz-input>
+                        </td>
+                        <td nz-td>
+                            <nz-input [nzPlaceHolder]="'出库单位成本'"></nz-input>
+                        </td>
+                        <td nz-td>
+                            <nz-input [nzPlaceHolder]="'出库成本'"></nz-input>
+                        </td>
+                        <td nz-td>
+                            &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+                <span nz-table-footer>footer</span>
+            </nz-table>
+        </div>
+        <div class="m-table">
+            <div class="title">子件：</div>
+            <nz-table #nzTable [nzScroll]="_fixHeader?{ y: 640 }:null" [nzDataSource]="_dataSet" [nzBordered]="_bordered" [nzLoading]="_loading"
+                [nzIsPagination]="false" [nzPageSize]="50" nzShowTotal nzShowQuickJumper nzShowSizeChanger [nzShowFooter]="_footer"
+                [nzShowTitle]="_title" [nzSize]="_size" [nzCustomNoResult]="true">
+                <span nz-table-title>Title</span>
+                <span noResult>暂无数据</span>
+                <ng-template #nzFixedHeader [ngIf]="_header&&!_fixHeader">
+                    <thead nz-thead>
+                        <tr>
+                            <th nz-th [nzWidth]="'170px'">
+                                <span>
+                                    <i class="anticon anticon-setting"></i>
+                                </span>
+                            </th>
+                            <th nz-th [nzWidth]="'170px'">
+                                <span>
+                                    <i style="color: #e60000;">*</i>商品</span>
+                            </th>
+                            <th nz-th [nzWidth]="'170px'">
+                                <span>单位</span>
+                            </th>
+                            <th nz-th [nzWidth]="'170px'">
+                                <span>
+                                    <i style="color: #e60000;">*</i>仓库(批量)</span>
+                            </th>
+                            <th nz-th [nzWidth]="'170px'">
+                                <span>
+                                    <i style="color: #e60000;">*</i>数量</span>
+                            </th>
+                            <th nz-th [nzWidth]="'170px'">
+                                <span>
+                                    <i style="color: #e60000;">*</i>入库单位成本</span>
+                            </th>
+                            <th nz-th [nzWidth]="'170px'">
+                                <span>
+                                    <i style="color: #e60000;">*</i>入库成本</span>
+                            </th>
+                            <th nz-th>
+                                <span>
+                                    <i style="color: #e60000;">*</i>备注</span>
+                            </th>
+                        </tr>
+                    </thead>
+                </ng-template>
+                <tbody nz-tbody>
+                    <tr nz-tbody-tr>
+                        <td nz-td>1</td>
+                        <td nz-td>
+                            <nz-upload nzAction="" nzSize="small">
+                                <button nz-button>
+                                    <i class="anticon anticon-upload"></i>
+                                    <span>选择</span>
+                                </button>
+                            </nz-upload>
+                        </td>
+                        <td nz-td>
+                            <nz-input [nzPlaceHolder]="'单位'"></nz-input>
+                        </td>
+                        <td nz-td>
+                            <nz-select style="width: 120px;" [nzPlaceHolder]="'选择仓库'" nzAllowClear>
+                                <nz-option [nzLabel]="1" [nzValue]="1" [nzDisabled]="false"></nz-option>
+                            </nz-select>
+                        </td>
+                        <td nz-td>
+                            <nz-input [nzPlaceHolder]="'数量'"></nz-input>
+                        </td>
+                        <td nz-td>
+                            <nz-input [nzPlaceHolder]="'入库单位成本'"></nz-input>
+                        </td>
+                        <td nz-td>
+                            <nz-input [nzPlaceHolder]="'入库成本'"></nz-input>
+                        </td>
+                        <td nz-td>
+                            <nz-input [nzPlaceHolder]="'备注'"></nz-input>
+                        </td>
+                    </tr>
+                </tbody>
+                <span nz-table-footer>footer</span>
+            </nz-table>
+        </div>
+    </div>
+    <div class="s-foot">
+        <div class="note">
+            <nz-input class="txt" [nzType]="'textarea'" [nzRows]="'4'" [nzPlaceHolder]="'暂无备注信息'"></nz-input>
+        </div>
+        <div class="money">
+            <span>拆卸费用：</span>
+            <nz-input [(ngModel)]="inputValue" [nzPlaceHolder]="'0.00'" (ngModelChange)="_console($event)"></nz-input>
+        </div>
+        <div class="btn">
+            <button nz-button [nzType]="'primary'" routerLink="/entrepot/teardown-search">
+                <span>历史单据</span>
+            </button>
+            <button nz-button [nzType]="'default'">
+                <span>操作日志</span>
+            </button>
+        </div>
+    </div>
 </div>
-<pro-header [title]="'Page Name'"></pro-header>

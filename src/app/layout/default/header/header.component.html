@@ -32,7 +32,7 @@
     </ul>
     <!-- <header-search class="header-search" [toggleChange]="searchToggleStatus"></header-search> -->
     <ul class="top-nav">
-        <li>
+        <li hidden-xs>
             <nz-input-group [nzSize]="'large'" nzCompact>
                 <nz-select [ngModel]="'搜库存'">
                     <nz-option [nzLabel]="'搜库存'" [nzValue]="'搜库存'"></nz-option>
@@ -52,13 +52,13 @@
         <!-- <li class="hidden-xs">
             <header-icon></header-icon>
         </li> -->
-        <li>
+        <li hidden-xs>
             <div class="item" nz-dropdown>
                 <i class="anticon anticon-customer-service"></i>
             </div>
         </li>
         <!-- Notify -->
-        <li>
+        <li hidden-xs>
             <header-notify></header-notify>
         </li>
         <li>
