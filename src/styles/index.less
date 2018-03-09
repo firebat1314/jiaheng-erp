@@ -1,9 +1,51 @@
 // 建议所有项目自定义样式放在该文件夹下
-body{
-   background: #fafafa !important;
+body {
+    background: #fafafa !important;
 }
-.wrapper{
-   >.content{
-      margin-top: 134px;
+
+.wrapper {
+    >.content {
+        margin-top: 134px;
+    }
+}
+
+.vertical-center-modal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .ant-modal-title {
+        text-align: center;
+    }
+}
+
+.vertical-center-modal .ant-modal {
+    top: 0;
+}
+
+.power-search-modal {
+   .ant-modal-content {
+       .ant-modal-header {
+           .ant-modal-title {}
+       }
+       .ant-modal-body {
+           display: flex;
+           justify-content: space-between;
+           flex-wrap: wrap;
+           .item {
+               width: calc(~'50% - 12px');
+               display: flex;
+               align-items: center;
+               margin-bottom: 10px;
+               flex-wrap: nowrap;
+               >span:first-of-type {
+                   min-width: 100px;
+               }
+           }
+       }
+       .ant-modal-footer {
+           text-align: right;
+           display: flex;
+           justify-content: space-between;
+       }
    }
 }

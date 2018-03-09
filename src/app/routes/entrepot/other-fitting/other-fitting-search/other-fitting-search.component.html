@@ -2,9 +2,9 @@
         <nz-input style="width: 200px;" [nzPlaceHolder]="'请输入单据号或备注'"></nz-input>
         &nbsp;&nbsp;<span>日期：</span>
         <nz-datepicker style="width: 170px;" (ngModelChange)="_startDate=$event;_startValueChange()" [ngModel]="_startDate" [nzDisabledDate]="_disabledStartDate"
-            nzShowTime [nzFormat]="'YYYY-MM-DD HH:mm:ss'" [nzPlaceHolder]="'开始日期'"></nz-datepicker>&nbsp;--&nbsp;
+            nzShowTime [nzFormat]="'YYYY-MM-DD'" [nzPlaceHolder]="'开始日期'"></nz-datepicker>&nbsp;--&nbsp;
         <nz-datepicker style="width: 170px;" (ngModelChange)="_endDate=$event;_endValueChange()" [ngModel]="_endDate" [nzDisabledDate]="_disabledEndDate"
-            [nzShowTime]="_endTime" [nzFormat]="'YYYY-MM-DD HH:mm:ss'" [nzPlaceHolder]="'结束日期'"></nz-datepicker>
+            [nzShowTime]="_endTime" [nzFormat]="'YYYY-MM-DD'" [nzPlaceHolder]="'结束日期'"></nz-datepicker>
         <button nz-button [nzType]="'default'">
             <span>高级搜索</span>
         </button>

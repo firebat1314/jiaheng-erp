@@ -13,6 +13,9 @@ import { TranslateModule } from '@ngx-translate/core';
 // region: third libs
 import { CountdownModule } from 'ngx-countdown';
 import { NzSchemaFormModule } from 'nz-schema-form';
+import { SelectSuppliersModalComponent } from './components/select-suppliers-modal/select-suppliers-modal.component';
+import { PowerSearchModalComponent } from './components/power-search-modal/power-search-modal.component';
+import { SelectEntrepotModalComponent } from './components/select-entrepot-modal/select-entrepot-modal.component';
 const THIRDMODULES = [
     CountdownModule,
     NzSchemaFormModule
@@ -20,7 +23,11 @@ const THIRDMODULES = [
 // endregion
 
 // region: your componets & directives
-const COMPONENTS = [];
+const COMPONENTS = [
+    PowerSearchModalComponent,
+    SelectEntrepotModalComponent,
+    SelectSuppliersModalComponent
+];
 const DIRECTIVES = [];
 // endregion
 
@@ -41,7 +48,7 @@ const DIRECTIVES = [];
     declarations: [
         // your components
         ...COMPONENTS,
-        ...DIRECTIVES
+        ...DIRECTIVES,
     ],
     exports: [
         CommonModule,

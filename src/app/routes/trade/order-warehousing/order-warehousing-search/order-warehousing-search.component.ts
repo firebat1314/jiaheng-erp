@@ -3,13 +3,13 @@ import { _HttpClient } from '@delon/theme';
 import * as moment from "moment";
 
 @Component({
-  selector: 's-order-search',
-  templateUrl: './order-search.component.html',
-  styleUrls: ['./order-search.component.less']
+  selector: 's-order-warehousing-search',
+  templateUrl: './order-warehousing-search.component.html',
+  styleUrls: ['./order-warehousing-search.component.less']
 })
-export class OrderSearchComponent implements OnInit {
+export class OrderWarehousingSearchComponent implements OnInit {
 
-  selectedOption: { value: string; label: string; disabled?: undefined; } | { value: string; label: string; disabled: boolean; };
+    selectedOption: { value: string; label: string; disabled?: undefined; } | { value: string; label: string; disabled: boolean; };
   options: ({ value: string; label: string; disabled?: undefined; } | { value: string; label: string; disabled: boolean; })[];
   constructor(
     private http: _HttpClient,
@@ -136,4 +136,22 @@ export class OrderSearchComponent implements OnInit {
     }
   }
 
+  isVisible = false;
+  isConfirmLoading = false;
+
+  showPowerSearchModal = () => {
+    this.isVisible = true;
+  }
+  
+  powerSearchModalHandleOk = (e) => {
+    this.isConfirmLoading = true;
+    setTimeout(() => {
+      this.isVisible = false;
+      this.isConfirmLoading = false;
+    }, 3000);
+  }
+
+  powerSearchModalHandleCancel = (e) => {
+    this.isVisible = false;
+  }
 }
