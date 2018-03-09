@@ -1,0 +1,141 @@
+<div class="s-wrap">
+    <div class="s-header">
+        <div class="h-w">
+            <div class="sub left">
+                <div class="item">
+                    <span>开票日期：</span>
+                    <nz-datepicker style="width: 130px;" (ngModelChange)="_startDate=$event;_startValueChange()" [ngModel]="_startDate" [nzDisabledDate]="_disabledStartDate"
+                        nzShowTime [nzFormat]="'YYYY-MM-DD'" [nzPlaceHolder]="'开始日期'"></nz-datepicker>
+                    <span style="color: #999999;white-space: nowrap;">&nbsp;--&nbsp;</span>
+                    <nz-datepicker style="width: 130px;" (ngModelChange)="_endDate=$event;_endValueChange()" [ngModel]="_endDate" [nzDisabledDate]="_disabledEndDate"
+                        [nzShowTime]="_endTime" [nzFormat]="'YYYY-MM-DD'" [nzPlaceHolder]="'结束日期'"></nz-datepicker>&nbsp;&nbsp;
+                </div>
+                <div class="item">
+                    <span>单据日期：</span>
+                    <nz-datepicker style="width: 130px;" (ngModelChange)="_startDate=$event;_startValueChange()" [ngModel]="_startDate" [nzDisabledDate]="_disabledStartDate"
+                        nzShowTime [nzFormat]="'YYYY-MM-DD'" [nzPlaceHolder]="'开始日期'"></nz-datepicker>
+                    <span style="color: #999999;white-space: nowrap;">&nbsp;--&nbsp;</span>
+                    <nz-datepicker style="width: 130px;" (ngModelChange)="_endDate=$event;_endValueChange()" [ngModel]="_endDate" [nzDisabledDate]="_disabledEndDate"
+                        [nzShowTime]="_endTime" [nzFormat]="'YYYY-MM-DD'" [nzPlaceHolder]="'结束日期'"></nz-datepicker>&nbsp;&nbsp;
+                </div>
+                <div class="item">
+                    <span>单据编号：</span>
+                    <nz-input style="width: 150px;" [ngModel]="num"></nz-input>
+                </div>
+                <div class="item">
+                    <span>客户：</span>
+                    <nz-select style="width: 150px;" nzAllowClear [nzPlaceHolder]="'供应商'" [nzFilter]="false" [nzNotFoundContent]="'无法找到'" nzShowSearch>
+                        <nz-option *ngFor="let option of searchOptions" [nzLabel]="option" [nzValue]="option">
+                        </nz-option>
+                        <nz-option>
+                            <ng-template #nzOptionTemplate>
+                                <i class="anticon anticon-plus"></i>
+                                <span> 新增客户</span>
+                            </ng-template>
+                        </nz-option>
+                    </nz-select>
+                    <button nz-button>
+                        <i class="anticon anticon-ellipsis"></i>
+                    </button>
+                    <button nz-button [nzType]="'primary'">
+                            <span>查询</span>
+                        </button>
+                </div>
+            </div>
+            <div class="term-flag" (click)="termFlag=!termFlag">
+                {{termFlag?'收起条件':'更多条件'}}
+                <i class="anticon " style="font-size:16px;" [ngClass]="termFlag?'anticon-caret-up':'anticon-caret-down'"></i>
+            </div>
+        </div>
+        <div class="h-w" *ngIf="termFlag">
+            <div class="sub left">
+                <div class="item">
+                    <span>发票号：</span>
+                    <nz-input style="width: 150px;" [ngModel]="num"></nz-input>
+                </div>
+                <div class="item">
+                    <span>发票抬头：</span>
+                    <nz-input style="width: 150px;" [ngModel]="num"></nz-input>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="s-main">
+        <div class="m-table-head mt-md mb-md">
+            <div class="btns text-right">
+                <button class="mr-sm" nz-button [nzType]="'primary'">
+                    <span>删除</span>
+                </button>
+            </div>
+        </div>
+        <div class="m-table">
+            <div class="table-m">
+                <nz-table #nzTable [nzScroll]="_fixHeader?{ y: 640,x: 1000 }:{ y: 640,x: 1000 }" [nzDataSource]="_dataSet" [nzBordered]="true"
+                    [nzLoading]="_loading" [nzIsPagination]="true" [nzPageSize]="50" nzShowTotal nzShowSizeChanger nzShowQuickJumper
+                    [nzShowFooter]="false" [nzShowTitle]="false" [nzSize]="'default'" [nzCustomNoResult]="true" nzPageSizeSelectorValues
+                    (nzDataChange)="_displayDataChange($event)">
+                    <span nz-table-title>Title</span>
+                    <span noResult>暂无数据</span>
+                    <ng-template #nzFixedHeader [ngIf]="_header&&!_fixHeader">
+                        <thead nz-thead>
+                            <tr>
+                                <th nz-th [nzWidth]="'40px'" nzCheckbox>
+                                    <label nz-checkbox [(ngModel)]="_allChecked" [nzIndeterminate]="_indeterminate" (ngModelChange)="_checkAll($event)">
+                                    </label>
+                                </th>
+                                <th nz-th [nzWidth]="'110px'">
+                                    <span>单据日期</span>
+                                </th>
+                                <th nz-th [nzWidth]="'110px'">
+                                    <span>单据编号</span>
+                                </th>
+                                <th nz-th [nzWidth]="'110px'">
+                                    <span>客户</span>
+                                </th>
+                                <th nz-th [nzWidth]="'110px'">
+                                    <span>价税合计</span>
+                                </th>
+                                <th nz-th [nzWidth]="'110px'">
+                                    <span>开票日期</span>
+                                </th>
+                                <th nz-th [nzWidth]="'110px'">
+                                    <span>开票金额</span>
+                                </th>
+                                <th nz-th [nzWidth]="'110px'">
+                                    <span>发票号</span>
+                                </th>
+                                <th nz-th [nzWidth]="'110px'">
+                                    <span>发票抬头</span>
+                                </th>
+                            </tr>
+                        </thead>
+                    </ng-template>
+                    <tbody nz-tbody>
+                        <tr nz-tbody-tr *ngFor="let data of nzTable.data">
+                            <td nz-td nzCheckbox>
+                                <label nz-checkbox [(ngModel)]="data.checked" (ngModelChange)="_refreshStatus($event)">
+                                </label>
+                            </td>
+                            <td nz-td>{{data.a}}</td>
+                            <td nz-td>{{data.g}}</td>
+                            <td nz-td>{{data.g}}</td>
+                            <td nz-td>{{data.g}}</td>
+                            <td nz-td>{{data.g}}</td>
+                            <td nz-td>{{data.g}}</td>
+                            <td nz-td>{{data.g}}</td>
+                            <td nz-td>
+                                <span>
+                                    <a>{{data.m}}</a>
+                                    <span nz-table-divider></span>
+                                    <a>删除</a>
+                                    <span nz-table-divider></span>
+                                </span>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <span nz-table-footer>footer</span>
+                </nz-table>
+            </div>
+        </div>
+    </div>

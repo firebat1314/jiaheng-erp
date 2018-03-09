@@ -1,7 +1,9 @@
 @import '~@delon/theme/styles/antd/themes/default.less';
-
 :host {
-    ::ng-deep {
+     ::ng-deep {
+        @import '../../../../styles/common2';
+        .ant-table-body{
+            min-height: 640px;
+        }
     }
 }
-

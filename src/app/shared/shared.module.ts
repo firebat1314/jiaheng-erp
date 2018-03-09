@@ -16,6 +16,7 @@ import { NzSchemaFormModule } from 'nz-schema-form';
 import { SelectSuppliersModalComponent } from './components/select-suppliers-modal/select-suppliers-modal.component';
 import { PowerSearchModalComponent } from './components/power-search-modal/power-search-modal.component';
 import { SelectEntrepotModalComponent } from './components/select-entrepot-modal/select-entrepot-modal.component';
+import { AmendEntrepotModalComponent } from './components/amend-entrepot-modal/amend-entrepot-modal.component';
 const THIRDMODULES = [
     CountdownModule,
     NzSchemaFormModule
@@ -26,7 +27,8 @@ const THIRDMODULES = [
 const COMPONENTS = [
     PowerSearchModalComponent,
     SelectEntrepotModalComponent,
-    SelectSuppliersModalComponent
+    SelectSuppliersModalComponent,
+    AmendEntrepotModalComponent,
 ];
 const DIRECTIVES = [];
 // endregion

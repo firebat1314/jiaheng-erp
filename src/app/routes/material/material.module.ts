@@ -11,12 +11,14 @@ import { MerchandiseControlComponent } from './merchandise-control/merchandise-c
 import { MerchandiseControlTwoComponent } from './merchandise-control-two/merchandise-control-two.component';
 import { PersonnelAdminComponent } from './personnel-admin/personnel-admin.component';
 import { BrandComponent } from './brand/brand.component';
+import { CqeCategoryComponent } from './cqe/cqe-category/cqe-category.component';
+import { CrmCategoryComponent } from './crm/crm-category/crm-category.component';
 
 @NgModule({
   imports: [
     SharedModule,
     MaterialRoutingModule
   ],
-  declarations: [WmsComponent, CqeComponent, MeasureUnitComponent, SettlementMethodComponent, CrmComponent, CpmComponent, MerchandiseControlComponent, MerchandiseControlTwoComponent, PersonnelAdminComponent, BrandComponent]
+  declarations: [WmsComponent, CqeComponent, MeasureUnitComponent, SettlementMethodComponent, CrmComponent, CpmComponent, MerchandiseControlComponent, MerchandiseControlTwoComponent, PersonnelAdminComponent, BrandComponent, CqeCategoryComponent, CrmCategoryComponent]
 })
 export class MaterialModule { }

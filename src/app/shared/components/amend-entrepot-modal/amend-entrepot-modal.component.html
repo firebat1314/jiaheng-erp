@@ -1,0 +1,34 @@
+
+<nz-modal 
+[nzVisible]="isVisible" 
+[nzTitle]="ModalTitle" 
+[nzContent]="ModalContent" 
+[nzWrapClassName]="'amend-entrepot-modal vertical-center-modal'"
+[nzFooter]="ModalFooter" 
+[nzWidth]="400"
+(nzOnCancel)="ModalHandleCancel($event)">
+<ng-template #ModalTitle>
+    修改仓库
+</ng-template>
+<ng-template #ModalContent>
+    <div class="item mb-md text-center">
+        <span><i class="text-red">*</i>仓库编号：</span>
+        <nz-select style="width: 174px;" [(ngModel)]="selectedOption" [nzPlaceHolder]="'空'" nzAllowClear>
+            <nz-option *ngFor="let option of options" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
+            </nz-option>
+        </nz-select>
+    </div>
+    <div class="item text-center">
+        <span><i class="text-red">*</i>仓库名称：</span>
+        <nz-input style="width: 174px;" [nzPlaceHolder]="'仓库'"></nz-input>
+    </div>
+</ng-template>
+<ng-template #ModalFooter>
+    <button nz-button [nzType]="'default'" [nzSize]="'large'" (click)="ModalHandleCancel($event)">
+        取 消
+    </button>
+    <button nz-button [nzType]="'primary'" [nzSize]="'large'" (click)="ModalHandleOk($event)" [nzLoading]="isConfirmLoading">
+        确 定
+    </button>
+</ng-template>
+</nz-modal>

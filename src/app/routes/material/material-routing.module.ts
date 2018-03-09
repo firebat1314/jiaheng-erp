@@ -10,12 +10,16 @@ import { CpmComponent } from './cpm/cpm.component';
 import { CrmComponent } from './crm/crm.component';
 import { PersonnelAdminComponent } from './personnel-admin/personnel-admin.component';
 import { BrandComponent } from './brand/brand.component';
+import { CqeCategoryComponent } from './cqe/cqe-category/cqe-category.component';
+import { CrmCategoryComponent } from './crm/crm-category/crm-category.component';
 
 const routes: Routes = [
   { path: 'cpm', component: CpmComponent },//仓储管理
   { path: 'cqe', component: CqeComponent },//供应商管理
+  { path: 'cqe-c', component: CqeCategoryComponent },//供应商管理
   { path: 'wms', component: WmsComponent },//仓库管理
   { path: 'crm', component: CrmComponent },//客户管理
+  { path: 'crm-c', component: CrmCategoryComponent },//客户管理
   { path: 'brand', component: BrandComponent },//商品品牌
   { path: 'measure-unit', component: MeasureUnitComponent },//计量单位管理
   { path: 'merchandise-c', component: MerchandiseControlComponent },//商品管理

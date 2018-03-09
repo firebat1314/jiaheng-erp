@@ -60,14 +60,26 @@
                             "text": "销售订单",
                             "link": "/market/order"
                         },{
+                            "text": "销售订单查询",
+                            "link": "/market/order-search"
+                        },{
                             "text": "发票管理",
                             "link": "/market/invoice"
+                        },{
+                            "text": "发票管理查询",
+                            "link": "/market/invoice-search"
                         },{
                             "text": "销售出库单",
                             "link": "/market/output"
                         },{
+                            "text": "销售出库单查询",
+                            "link": "/market/output-search"
+                        },{
                             "text": "销售退货单",
                             "link": "/market/returns"
+                        },{
+                            "text": "销售退货单查询",
+                            "link": "/market/returns-search"
                         }
                     ]
                 },
@@ -153,11 +165,17 @@
                             "text": "供应商管理",
                             "link": "/material/cqe"
                         },{
+                            "text": "供应商类型",
+                            "link": "/material/cqe-c"
+                        },{
                             "text": "计量单位管理",
                             "link": "/material/measure-unit"
                         },{
                             "text": "客户管理",
                             "link": "/material/crm"
+                        },{
+                            "text": "客户类型",
+                            "link": "/material/crm-c"
                         },{
                             "text": "商品管理",
                             "link": "/material/merchandise-c"

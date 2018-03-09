@@ -1,4 +1,171 @@
-<div class="content__title">
-    <h1>Page Name</h1>
+<div class="head">
+    <nz-input style="width: 250px;" [nzPlaceHolder]="'按供应商编号/商品名称/规格型号等查询'"></nz-input>
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    <label nz-checkbox [(ngModel)]="_checked">
+        <span>显示禁用客户</span>
+    </label>
+    <button nz-button [nzType]="'default'" (click)="powerSearch.showModal()">
+        <span>高级搜索</span>
+    </button>
+    <button class="ml-sm" nz-button [nzType]="'primary'">
+        <span>查询</span>
+    </button>
 </div>
-<pro-header [title]="'Page Name'"></pro-header>
+<div class="s-main">
+    <div class="table-hd">
+        <div>
+            <span class="mr-sm">
+                <i class="anticon anticon-setting"></i>
+            </span>
+            <span>列设置</span>
+        </div>
+        <div class="btns">
+            <button class="ml-sm" nz-button [nzType]="'primary'" (click)="amendEntrepot.showModal()">
+                <span>新增</span>
+            </button>
+            <button class="ml-sm" nz-button [nzType]="'primary'" nzGhost>
+                <span>禁用</span>
+            </button>
+            <button class="ml-sm" nz-button [nzType]="'default'">
+                <span>启用</span>
+            </button>
+            <button class="ml-sm" nz-button [nzType]="'default'">
+                <span>导入</span>
+            </button>
+            <button class="ml-sm" nz-button [nzType]="'default'">
+                <span>导出</span>
+            </button>
+            <button class="ml-sm" nz-button [nzType]="'default'">
+                <span>删除</span>
+            </button>
+        </div>
+    </div>
+    <div class="table-m">
+        <nz-table #nzTable [nzScroll]="_fixHeader?{ y: 640,x: 3000 }:{ y: 640,x: 3000 }" [nzDataSource]="_dataSet" [nzBordered]="true"
+            [nzLoading]="_loading" [nzIsPagination]="true" [nzPageSize]="50" nzShowTotal nzShowSizeChanger nzShowQuickJumper
+            [nzShowFooter]="false" [nzShowTitle]="true" [nzSize]="'default'" [nzCustomNoResult]="true" nzPageSizeSelectorValues
+            (nzDataChange)="_displayDataChange($event)">
+            <span nz-table-title class="d-flex justify-content-between">
+                <span>当前分类：{{'??????'}}</span>
+                <span>
+                    <i class="anticon anticon-double-right point handle-icon" style="padding: 3px 10px;background: #e0e0e0;color: #ffffff;"></i>
+                    <i class="anticon anticon-double-left point handle-icon" style="padding: 3px 10px;background: #e0e0e0;color: #ffffff;"></i>
+                </span>
+            </span>
+            <span noResult>暂无数据</span>
+            <ng-template #nzFixedHeader [ngIf]="_header&&!_fixHeader">
+                <thead nz-thead>
+                    <tr>
+                        <th nz-th [nzWidth]="'50px'" nzCheckbox>
+                            <label nz-checkbox [(ngModel)]="_allChecked" [nzIndeterminate]="_indeterminate" (ngModelChange)="_checkAll($event)">
+                            </label>
+                        </th>
+                        <th nz-th [nzWidth]="'100px'">
+                            <span>操作</span>
+                        </th>
+                        <th nz-th [nzWidth]="'130px'">
+                            <span>图片</span>
+                        </th>
+                        <th nz-th [nzWidth]="'130px'">
+                            <span>商品编号</span>
+                        </th>
+                        <th nz-th [nzWidth]="'130px'">
+                            <span>商品标签</span>
+                        </th>
+                        <th nz-th [nzWidth]="'130px'">
+                            <span>辅助属性</span>
+                        </th>
+                        <th nz-th [nzWidth]="'130px'">
+                            <span>商品类别</span>
+                        </th>
+                        <th nz-th [nzWidth]="'130px'">
+                            <span>规格型号</span>
+                        </th>
+                        <th nz-th [nzWidth]="'130px'">
+                            <span>商品品牌</span>
+                        </th>
+                        <th nz-th [nzWidth]="'130px'">
+                            <span>单位</span>
+                        </th>
+                        <th nz-th [nzWidth]="'130px'">
+                            <span>当前库存</span>
+                        </th>
+                        <th nz-th [nzWidth]="'130px'">
+                            <span>期初数量</span>
+                        </th>
+                        <th nz-th [nzWidth]="'130px'">
+                            <span>单位成本</span>
+                        </th>
+                        <th nz-th [nzWidth]="'130px'">
+                            <span>期初总价</span>
+                        </th>
+                        <th nz-th [nzWidth]="'130px'">
+                            <span>预计采购价</span>
+                        </th>
+                        <th nz-th [nzWidth]="'130px'">
+                            <span>零售价</span>
+                        </th>
+                        <th nz-th [nzWidth]="'130px'">
+                            <span>批发价</span>
+                        </th>
+                        <th nz-th [nzWidth]="'130px'">
+                            <span>VIP会员价</span>
+                        </th>
+                        <th nz-th [nzWidth]="'130px'">
+                            <span>备注</span>
+                        </th>
+                        <th nz-th [nzWidth]="'130px'">
+                            <span>状态</span>
+                        </th>
+                        <th nz-th [nzWidth]="'130px'">
+                            <span>是否常用</span>
+                        </th>
+                        <th nz-th>
+                            <span>&nbsp;</span>
+                        </th>
+                    </tr>
+                </thead>
+            </ng-template>
+            <tbody nz-tbody>
+                <tr nz-tbody-tr *ngFor="let data of nzTable.data">
+                    <td nz-td nzCheckbox>
+                        <label nz-checkbox [(ngModel)]="data.checked" (ngModelChange)="_refreshStatus($event)">
+                        </label>
+                    </td>
+                    <td nz-td>
+                        <i class="anticon anticon-edit point handle-icon mr-sm" (click)="amendEntrepot.showModal()"></i>
+                        <i class="anticon anticon-copy point handle-icon mr-sm"></i>
+                        <i class="anticon anticon-delete point handle-icon"></i>
+                    </td>
+                    <td nz-td>{{data.a}}</td>
+                    <td nz-td>{{data.b}}</td>
+                    <td nz-td>{{data.b}}</td>
+                    <td nz-td>{{data.b}}</td>
+                    <td nz-td>{{data.b}}</td>
+                    <td nz-td>{{data.b}}</td>
+                    <td nz-td>{{data.b}}</td>
+                    <td nz-td>{{data.b}}</td>
+                    <td nz-td>{{data.b}}</td>
+                    <td nz-td>{{data.b}}</td>
+                    <td nz-td>{{data.b}}</td>
+                    <td nz-td>{{data.b}}</td>
+                    <td nz-td>{{data.b}}</td>
+                    <td nz-td>{{data.b}}</td>
+                    <td nz-td>{{data.b}}</td>
+                    <td nz-td>{{data.b}}</td>
+                    <td nz-td>{{data.b}}</td>
+                    <td nz-td>
+                        <nz-switch [nzSize]="'small'"></nz-switch>
+                    </td>
+                    <td nz-td>
+                        <i style="color: #18bff3;" class="anticon anticon-star point handle-icon"></i>
+                        <i class="anticon anticon-star-o point handle-icon"></i>
+                    </td>
+                    <td nz-td></td>
+                </tr>
+            </tbody>
+            <span nz-table-footer>footer</span>
+        </nz-table>
+    </div>
+</div>
+<s-amend-entrepot-modal #amendEntrepot></s-amend-entrepot-modal>

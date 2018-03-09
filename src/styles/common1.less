@@ -4,12 +4,16 @@
     .s-header {
         padding: 0 16px;
         background: #fff;
+        position: relative;
         .h-w {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 1px solid #e0e0e0;
             padding: 16px 0;
+            overflow: hidden;
+            &:last-child{
+                border-bottom: 1px solid #e0e0e0;
+            }
             .sub {
                 display: flex;
                 align-items: center;
@@ -26,6 +30,14 @@
                     margin-left: 8px;
                 }
             }
+        }
+        .term-flag{
+            background: url(/assets/img/term-flag-bg.png) no-repeat left center / 100%100%;
+            padding: 6px 25px;
+            position: absolute;
+            right: -2px;
+            bottom: 0;
+            cursor: pointer;
         }
     }
     .s-main {
@@ -93,7 +105,7 @@
             th,
             td {
                 text-align: center;
-                .ant-input-group-addon{
+                .ant-input-group-addon {
                     cursor: pointer;
                 }
                 &.first-td {
@@ -152,10 +164,11 @@
             display: flex;
             align-items: center;
             flex-wrap: wrap;
-            >span{
+            >span {
                 min-width: 90px;
             }
-            nz-input,nz-select {
+            nz-input,
+            nz-select,nz-datepicker {
                 width: 130px;
                 margin-right: 20px;
             }

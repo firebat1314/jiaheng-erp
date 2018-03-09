@@ -1,0 +1,72 @@
+<div class="s-main">
+    <div class="table-hd">
+        <div class="d-flex align-items-center">
+            <span class="mr-md">类别</span>
+            <nz-radio-group class="mr-md"  [(ngModel)]="cate">
+                <label nz-radio-button [nzValue]="'a'">
+                    <span>客户</span>
+                </label>
+                <label nz-radio-button [nzValue]="'s'">
+                    <span>供应商</span>
+                </label>
+                <label nz-radio-button [nzValue]="'d'">
+                    <span>商品</span>
+                </label>
+                <label nz-radio-button [nzValue]="'f'">
+                    <span>支出</span>
+                </label>
+                <label nz-radio-button [nzValue]="'g'">
+                    <span>收入</span>
+                </label>
+            </nz-radio-group>
+            <nz-input style="width:150px;" class="mr-sm"></nz-input>
+            <button class="ml-sm" nz-button [nzType]="'primary'" (click)="amendEntrepot.showModal()">
+                <span>查询</span>
+            </button>
+        </div>
+        <div class="btns">
+            <button class="ml-sm" nz-button [nzType]="'primary'" (click)="amendEntrepot.showModal()">
+                <span>新增</span>
+            </button>
+            <button class="ml-sm" nz-button [nzType]="'default'">
+                <span>刷新</span>
+            </button>
+        </div>
+    </div>
+    <div class="table-m">
+        <nz-table #nzTable [nzScroll]="_fixHeader?{ y: 640,x: 1700 }:{ y: 640,x: 1700 }" [nzDataSource]="_dataSet" [nzBordered]="true"
+            [nzLoading]="_loading" [nzIsPagination]="true" [nzPageSize]="50" nzShowTotal nzShowSizeChanger nzShowQuickJumper
+            [nzShowFooter]="false" [nzShowTitle]="false" [nzSize]="'default'" [nzCustomNoResult]="true" nzPageSizeSelectorValues
+            (nzDataChange)="_displayDataChange($event)">
+            <span nz-table-title>Title</span>
+            <span noResult>暂无数据</span>
+            <ng-template #nzFixedHeader [ngIf]="_header&&!_fixHeader">
+                <thead nz-thead>
+                    <tr>
+                        <th nz-th [nzWidth]="'70px'">
+                            <span>操作</span>
+                        </th>
+                        <th nz-th [nzWidth]="'130px'">
+                            <span>类别</span>
+                        </th>
+                        <th nz-th>
+                            <span>&nbsp;</span>
+                        </th>
+                    </tr>
+                </thead>
+            </ng-template>
+            <tbody nz-tbody>
+                <tr nz-tbody-tr *ngFor="let data of nzTable.data">
+                    <td nz-td>
+                        <i class="anticon anticon-edit point handle-icon mr-sm" (click)="amendEntrepot.showModal()"></i>
+                        <i class="anticon anticon-delete point handle-icon"></i>
+                    </td>
+                    <td nz-td>{{data.b}}</td>
+                    <td nz-td></td>
+                </tr>
+            </tbody>
+            <span nz-table-footer>footer</span>
+        </nz-table>
+    </div>
+</div>
+<s-amend-entrepot-modal #amendEntrepot></s-amend-entrepot-modal>

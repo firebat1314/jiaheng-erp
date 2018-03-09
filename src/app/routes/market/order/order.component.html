@@ -3,8 +3,8 @@
       <div class="h-w">
          <div class="sub left">
             <div class="item">
-               <span>供应商：</span>
-               <nz-select style="width: 200px;" nzAllowClear [nzPlaceHolder]="'供应商'" [nzFilter]="false" [nzNotFoundContent]="'无法找到'" nzShowSearch>
+               <span><i class="text-red">*</i>客户：</span>
+               <nz-select style="width: 150px;" nzAllowClear [nzPlaceHolder]="'供应商'" [nzFilter]="false" [nzNotFoundContent]="'无法找到'" nzShowSearch>
                   <nz-option *ngFor="let option of searchOptions" [nzLabel]="option" [nzValue]="option">
                   </nz-option>
                   <nz-option>
@@ -19,12 +19,25 @@
                </button>
             </div>
             <div class="item">
+               <span>销售人员：</span>
+               <nz-select style="width: 150px;" nzAllowClear [nzPlaceHolder]="'（空）'" [nzFilter]="false" [nzNotFoundContent]="'无法找到'" nzShowSearch>
+                        <nz-option *ngFor="let option of searchOptions" [nzLabel]="option" [nzValue]="option">
+                        </nz-option>
+                        <nz-option>
+                           <ng-template #nzOptionTemplate>
+                              <i class="anticon anticon-plus"></i>
+                              <span> 新增客户</span>
+                           </ng-template>
+                        </nz-option>
+                     </nz-select>
+            </div>
+            <div class="item">
                <span>单据日期：</span>
-               <nz-datepicker></nz-datepicker>
+               <nz-datepicker style="width: 110px;"></nz-datepicker>
             </div>
             <div class="item">
                <span>交货日期：</span>
-               <nz-datepicker></nz-datepicker>
+               <nz-datepicker style="width: 110px;"></nz-datepicker>
             </div>
             <nz-radio-group>
                <label nz-radio [nzValue]="'A'">
@@ -78,43 +91,33 @@
                         <nz-switch [(ngModel)]="userScanner" [nzSize]="'small'"></nz-switch>
                      </th>
                      <th nz-th [nzWidth]="'100px'">
-                        <i style="color: #e60000;">*</i>
                         <span>规格型号</span>
                      </th>
                      <th nz-th [nzWidth]="'100px'">
-                        <i style="color: #e60000;">*</i>
                         <span>球镜</span>
                      </th>
                      <th nz-th [nzWidth]="'100px'">
-                        <i style="color: #e60000;">*</i>
                         <span>柱镜</span>
                      </th>
                      <th nz-th [nzWidth]="'100px'">
-                        <i style="color: #e60000;">*</i>
                         <span>轴位</span>
                      </th>
                      <th nz-th [nzWidth]="'100px'">
-                        <i style="color: #e60000;">*</i>
                         <span>通道</span>
                      </th>
                      <th nz-th [nzWidth]="'100px'">
-                        <i style="color: #e60000;">*</i>
                         <span>ADD</span>
                      </th>
                      <th nz-th [nzWidth]="'100px'">
-                        <i style="color: #e60000;">*</i>
                         <span>颜色</span>
                      </th>
                      <th nz-th [nzWidth]="'100px'">
-                        <i style="color: #e60000;">*</i>
                         <span>直径</span>
                      </th>
                      <th nz-th [nzWidth]="'100px'">
-                        <i style="color: #e60000;">*</i>
                         <span>左/右</span>
                      </th>
                      <th nz-th [nzWidth]="'100px'">
-                        <i style="color: #e60000;">*</i>
                         <span>单位</span>
                      </th>
                      <th nz-th [nzWidth]="'120px'">
@@ -138,7 +141,7 @@
                         <span>数量</span>
                      </th>
                      <th nz-th [nzWidth]="'100px'">
-                        <span>购货单价</span>
+                        <span>销售单价</span>
                      </th>
                      <th nz-th [nzWidth]="'150px'">
                         <span>折扣率(%)</span>
@@ -171,13 +174,10 @@
                         </nz-popconfirm>
                      </th>
                      <th nz-th [nzWidth]="'100px'">
-                        <span>购货金额</span>
-                     </th>
-                     <th nz-th [nzWidth]="'100px'">
-                        <span>备注</span>
+                        <span>销售金额</span>
                      </th>
                      <th nz-th>
-                        <span>关联销货订单号</span>
+                        <span>备注</span>
                      </th>
                   </tr>
                </thead>
@@ -275,9 +275,6 @@
                   </td>
                   <td nz-td>
                      <nz-input [nzPlaceHolder]="'备注'"></nz-input>
-                  </td>
-                  <td nz-td>
-                     <nz-input [nzPlaceHolder]="'关联销货订单号'"></nz-input>
                   </td>
                </tr>
                <tr nz-tbody-tr class="hover-tr">
