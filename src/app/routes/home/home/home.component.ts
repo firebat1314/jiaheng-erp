@@ -27,7 +27,7 @@ export class HomeComponent implements OnInit {
             this.webSite = res.visitData.slice(0, 10);
             this.salesData = res.salesData;
             this.offlineChartData = res.offlineChartData;
-        });
+        },(error)=>{console.log(error)},()=>{console.log(3333333333333333333)});
     }
     setDate(type: any,name:string) {
         this.selectDate = name;

@@ -4,11 +4,11 @@
             <div class="sub left">
                 <div class="item">
                     <span>单据日期：</span>
-                    <nz-datepicker style="width: 130px;" (ngModelChange)="_startDate=$event;_startValueChange()" [ngModel]="_startDate" [nzDisabledDate]="_disabledStartDate"
+                    <nz-datepicker style="width: 130px;"
                         nzShowTime [nzFormat]="'YYYY-MM-DD'" [nzPlaceHolder]="'开始日期'"></nz-datepicker>
                     <span style="color: #999999;white-space: nowrap;">&nbsp;--&nbsp;</span>
-                    <nz-datepicker style="width: 130px;" (ngModelChange)="_endDate=$event;_endValueChange()" [ngModel]="_endDate" [nzDisabledDate]="_disabledEndDate"
-                        [nzShowTime]="_endTime" [nzFormat]="'YYYY-MM-DD'" [nzPlaceHolder]="'结束日期'"></nz-datepicker>&nbsp;&nbsp;
+                    <nz-datepicker style="width: 130px;" 
+                        [nzFormat]="'YYYY-MM-DD'" [nzPlaceHolder]="'结束日期'"></nz-datepicker>&nbsp;&nbsp;
                 </div>
                 <div class="item">
                     <span>单据编号：</span>
@@ -17,7 +17,7 @@
                 <div class="item">
                     <span>客户：</span>
                     <nz-select style="width: 150px;" nzAllowClear [nzPlaceHolder]="'供应商'" [nzFilter]="false" [nzNotFoundContent]="'无法找到'" nzShowSearch>
-                        <nz-option *ngFor="let option of searchOptions" [nzLabel]="option" [nzValue]="option">
+                        <nz-option *ngFor="let option of [{},{},{}]" [nzLabel]="option" [nzValue]="option">
                         </nz-option>
                         <nz-option>
                             <ng-template #nzOptionTemplate>
@@ -60,13 +60,13 @@
         </div>
         <div class="m-table">
             <div class="table-m">
-                <nz-table #nzTable [nzScroll]="_fixHeader?{ y: 640,x: 1000 }:{ y: 640,x: 1000 }" [nzDataSource]="_dataSet" [nzBordered]="true"
+                <nz-table #nzTable [nzScroll]="{ y: 640,x: 1000 }" [nzDataSource]="_dataSet" [nzBordered]="true"
                     [nzLoading]="_loading" [nzIsPagination]="true" [nzPageSize]="50" nzShowTotal nzShowSizeChanger nzShowQuickJumper
                     [nzShowFooter]="false" [nzShowTitle]="false" [nzSize]="'default'" [nzCustomNoResult]="true" nzPageSizeSelectorValues
-                    (nzDataChange)="_displayDataChange($event)">
+                   >
                     <span nz-table-title>Title</span>
                     <span noResult>暂无数据</span>
-                    <ng-template #nzFixedHeader [ngIf]="_header&&!_fixHeader">
+                    <ng-template #nzFixedHeader>
                         <thead nz-thead>
                             <tr>
                                 <th nz-th [nzWidth]="'40px'" nzCheckbox>
@@ -129,11 +129,11 @@
                 <span>开票日期：</span>
                 <nz-datepicker style="width: 110px;"></nz-datepicker>
                 <span><i class="text-red">*</i>发票号</span>
-                <nz-input [(ngModel)]="inputValue" [nzPlaceHolder]="'0'" (ngModelChange)="_console($event)"></nz-input>
+                <nz-input [nzPlaceHolder]="'0'"></nz-input>
                 <span>发票金额：</span>
-                <nz-input [(ngModel)]="inputValue" [nzPlaceHolder]="'0.00'" (ngModelChange)="_console($event)" [nzDisabled]="true"></nz-input>
+                <nz-input [nzPlaceHolder]="'0.00'" [nzDisabled]="true"></nz-input>
                 <span><i class="text-red">*</i>发票抬头：</span>
-                <nz-input [(ngModel)]="inputValue" [nzPlaceHolder]="'0'"></nz-input>
+                <nz-input [nzPlaceHolder]="'0'"></nz-input>
             </div>
             <!-- <div class="ziduan">
                    <i class="anticon anticon-edit"></i>

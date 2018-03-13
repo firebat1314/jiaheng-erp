@@ -16,14 +16,8 @@ export class OtherFittingSearchComponent implements OnInit {
     ) { }
 
     _dataSet = [];
-    _bordered = true;
     _loading = false;
-    _pagination = true;
-    _header = true;
-    _title = false;
-    _footer = false;
-    _fixHeader = true;
-    _size = 'default';
+    
     _allChecked = false;
     _disabledButton = true;
     _checkedNumber = 0;

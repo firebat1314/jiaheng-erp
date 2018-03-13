@@ -10,7 +10,6 @@ export class SelectEntrepotModalComponent implements OnInit {
 
     _dataSet = [];
     _loading = false;
-    _fixHeader = true;
     _allChecked = false;
     _disabledButton = true;
     _checkedNumber = 0;

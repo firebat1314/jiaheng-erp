@@ -13,8 +13,8 @@
 <ng-template #ModalContent>
     <div class="item mb-md text-center">
         <span><i class="text-red">*</i>仓库编号：</span>
-        <nz-select style="width: 174px;" [(ngModel)]="selectedOption" [nzPlaceHolder]="'空'" nzAllowClear>
-            <nz-option *ngFor="let option of options" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
+        <nz-select style="width: 174px;" [nzPlaceHolder]="'空'" nzAllowClear>
+            <nz-option *ngFor="let option of [{},{},{}]" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
             </nz-option>
         </nz-select>
     </div>

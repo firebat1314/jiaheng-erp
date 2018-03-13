@@ -3,22 +3,22 @@ import { _HttpClient } from '@delon/theme';
 import { NzMessageService } from 'ng-zorro-antd';
 
 @Component({
-  selector: 's-crm-category',
-  templateUrl: './crm-category.component.html',
-  styleUrls: ['./crm-category.component.less']
+  selector: 's-category',
+  templateUrl: './category.component.html',
+  styleUrls: ['./category.component.less']
 })
-export class CrmCategoryComponent implements OnInit {
+export class CategoryComponent implements OnInit {
 
     _dataSet = [];
     _loading = false;
-
+    cate = 'A'
     constructor(
         private http: _HttpClient,
         private _message: NzMessageService
     ) { }
 
     ngOnInit() {
-        for (let i = 0; i < 5; i++) {
+        for (let i = 0; i < 500; i++) {
             this._dataSet.push({
                 key: i,
                 a: i,

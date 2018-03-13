@@ -17,7 +17,6 @@ export class OrderSearchComponent implements OnInit {
   
     _dataSet = [];
     _loading = false;
-    _fixHeader = true;
     _allChecked = false;
     _disabledButton = true;
     _checkedNumber = 0;
@@ -25,6 +24,7 @@ export class OrderSearchComponent implements OnInit {
     _operating = false;
     _indeterminate = false;
   
+    _header
     _displayDataChange($event) {
       this._displayData = $event;
     }

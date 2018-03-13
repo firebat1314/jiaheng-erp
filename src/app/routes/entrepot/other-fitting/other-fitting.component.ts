@@ -15,14 +15,8 @@ export class OtherFittingComponent implements OnInit {
     ) { }
 
     _dataSet = [];
-    _bordered = true;
     _loading = false;
-    _pagination = true;
-    _header = true;
-    _title = false;
-    _footer = false;
-    _fixHeader = false;
-    _size = 'default';
+    
     ngOnInit() {
         this.options = [
             { value: '1', label: '2' },

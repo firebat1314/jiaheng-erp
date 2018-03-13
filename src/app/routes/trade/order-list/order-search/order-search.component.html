@@ -2,12 +2,12 @@
     <nz-input style="width: 200px;" [nzPlaceHolder]="'请输入单据号或客户名或备注'"></nz-input>
     &nbsp;&nbsp;
     <span>日期：</span>
-    <nz-datepicker style="width: 170px;" (ngModelChange)="_startDate=$event;_startValueChange()" [ngModel]="_startDate" [nzDisabledDate]="_disabledStartDate"
+    <nz-datepicker style="width: 170px;"
         nzShowTime [nzFormat]="'YYYY-MM-DD'" [nzPlaceHolder]="'开始日期'"></nz-datepicker><span style="color: #999999;white-space: nowrap;">&nbsp;--&nbsp;</span>
-    <nz-datepicker style="width: 170px;" (ngModelChange)="_endDate=$event;_endValueChange()" [ngModel]="_endDate" [nzDisabledDate]="_disabledEndDate"
-        [nzShowTime]="_endTime" [nzFormat]="'YYYY-MM-DD'" [nzPlaceHolder]="'结束日期'"></nz-datepicker>&nbsp;&nbsp;
-    <nz-select style="width: 120px;" [(ngModel)]="selectedOption" [nzPlaceHolder]="'订单状态'" nzAllowClear>
-        <nz-option *ngFor="let option of options" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
+    <nz-datepicker style="width: 170px;" 
+        [nzFormat]="'YYYY-MM-DD'" [nzPlaceHolder]="'结束日期'"></nz-datepicker>&nbsp;&nbsp;
+    <nz-select style="width: 120px;" [nzPlaceHolder]="'订单状态'" nzAllowClear>
+        <nz-option *ngFor="let option of [{},{},{}]" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
         </nz-option>
     </nz-select>
     <button nz-button [nzType]="'default'" (click)="powerSearch.showModal()">
@@ -67,7 +67,7 @@
     </div>
     <div class="table-m">
         <nz-table #nzTable 
-        [nzScroll]="_fixHeader?{ y: 640,x: 1500 }:{ y: 640,x: 1500 }" 
+        [nzScroll]="{ y: 640,x: 1500 }" 
         [nzDataSource]="_dataSet" 
         [nzBordered]="true" 
         [nzLoading]="_loading"
@@ -81,10 +81,10 @@
         [nzSize]="'default'" 
         [nzCustomNoResult]="true" 
         nzPageSizeSelectorValues 
-        (nzDataChange)="_displayDataChange($event)">
+       >
             <span nz-table-title>Title</span>
             <span noResult>暂无数据</span>
-            <ng-template #nzFixedHeader [ngIf]="_header&&!_fixHeader">
+            <ng-template #nzFixedHeader>
                 <thead nz-thead>
                     <tr>
                         <th nz-th [nzWidth]="'70px'" nzCheckbox>

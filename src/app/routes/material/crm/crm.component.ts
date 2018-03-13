@@ -11,14 +11,14 @@ export class CrmComponent implements OnInit {
 
     _dataSet = [];
     _loading = false;
-
+    
     constructor(
         private http: _HttpClient,
         private _message: NzMessageService
     ) { }
 
     ngOnInit() {
-        for (let i = 0; i < 5; i++) {
+        for (let i = 0; i < 500; i++) {
             this._dataSet.push({
                 key: i,
                 a: i,

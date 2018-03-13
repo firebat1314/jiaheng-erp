@@ -20,7 +20,6 @@ export class InventorySearchComponent implements OnInit {
     _header = true;
     _title = false;
     _footer = false;
-    _fixHeader = true;
     _size = 'default';
     ngOnInit() {
         this.options = [

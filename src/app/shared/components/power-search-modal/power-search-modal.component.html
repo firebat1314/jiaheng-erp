@@ -13,10 +13,10 @@
     <ng-template #ModalContent>
         <div class="item">
             <span>单据日期：</span>
-            <nz-datepicker (ngModelChange)="_startDate=$event;_startValueChange()" [ngModel]="_startDate" [nzDisabledDate]="_disabledStartDate"
+            <nz-datepicker
                 nzShowTime [nzFormat]="'YYYY-MM-DD'" [nzPlaceHolder]="'开始日期'"></nz-datepicker><span style="color: #999999;white-space: nowrap;">&nbsp;--&nbsp;</span>
-            <nz-datepicker (ngModelChange)="_endDate=$event;_endValueChange()" [ngModel]="_endDate" [nzDisabledDate]="_disabledEndDate"
-                [nzShowTime]="_endTime" [nzFormat]="'YYYY-MM-DD'" [nzPlaceHolder]="'结束日期'"></nz-datepicker>
+            <nz-datepicker 
+                [nzFormat]="'YYYY-MM-DD'" [nzPlaceHolder]="'结束日期'"></nz-datepicker>
         </div>
         <div class="item">
             <span>分录备注：</span>
@@ -24,10 +24,10 @@
         </div>
         <div class="item">
             <span>交货日期：</span>
-            <nz-datepicker (ngModelChange)="_startDate=$event;_startValueChange()" [ngModel]="_startDate" [nzDisabledDate]="_disabledStartDate"
+            <nz-datepicker
                 nzShowTime [nzFormat]="'YYYY-MM-DD'" [nzPlaceHolder]="'开始日期'"></nz-datepicker><span style="color: #999999;white-space: nowrap;">&nbsp;--&nbsp;</span>
-            <nz-datepicker (ngModelChange)="_endDate=$event;_endValueChange()" [ngModel]="_endDate" [nzDisabledDate]="_disabledEndDate"
-                [nzShowTime]="_endTime" [nzFormat]="'YYYY-MM-DD'" [nzPlaceHolder]="'结束日期'"></nz-datepicker>
+            <nz-datepicker 
+                [nzFormat]="'YYYY-MM-DD'" [nzPlaceHolder]="'结束日期'"></nz-datepicker>
         </div>
         <div class="item">
             <span>关联销货订单：</span>
@@ -39,8 +39,8 @@
         </div>
         <div class="item">
             <span>订单状态：</span>
-            <nz-select style="width: 100%;" [(ngModel)]="selectedOption" [nzPlaceHolder]="'空'" nzAllowClear>
-                <nz-option *ngFor="let option of options" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
+            <nz-select style="width: 100%;" [nzPlaceHolder]="'空'" nzAllowClear>
+                <nz-option *ngFor="let option of [{},{},{}]" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
                 </nz-option>
             </nz-select>
         </div>
@@ -54,8 +54,8 @@
         </div>
         <div class="item">
             <span>制单人：</span>
-            <nz-select style="width: 100%;" [(ngModel)]="selectedOption" [nzPlaceHolder]="'空'" nzAllowClear>
-                <nz-option *ngFor="let option of options" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
+            <nz-select style="width: 100%;" [nzPlaceHolder]="'空'" nzAllowClear>
+                <nz-option *ngFor="let option of [{},{},{}]" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
                 </nz-option>
             </nz-select>
         </div>
@@ -69,8 +69,8 @@
         </div>
         <div class="item">
             <span>最后修改人：</span>
-            <nz-select style="width: 100%;" [(ngModel)]="selectedOption" [nzPlaceHolder]="'空'" nzAllowClear>
-                <nz-option *ngFor="let option of options" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
+            <nz-select style="width: 100%;" [nzPlaceHolder]="'空'" nzAllowClear>
+                <nz-option *ngFor="let option of [{},{},{}]" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
                 </nz-option>
             </nz-select>
         </div>
@@ -84,8 +84,8 @@
         </div>
         <div class="item">
             <span>业务类型：</span>
-            <nz-select style="width: 100%;" [(ngModel)]="selectedOption" [nzPlaceHolder]="'空'" nzAllowClear>
-                <nz-option *ngFor="let option of options" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
+            <nz-select style="width: 100%;" [nzPlaceHolder]="'空'" nzAllowClear>
+                <nz-option *ngFor="let option of [{},{},{}]" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
                 </nz-option>
             </nz-select>
         </div>

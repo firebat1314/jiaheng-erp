@@ -5,7 +5,7 @@
                 <div class="item">
                     <span>供应商：</span>
                     <nz-select style="width: 200px;" nzAllowClear [nzPlaceHolder]="'供应商'" [nzFilter]="false" [nzNotFoundContent]="'无法找到'" nzShowSearch>
-                        <nz-option *ngFor="let option of searchOptions" [nzLabel]="option" [nzValue]="option">
+                        <nz-option *ngFor="let option of [{},{},{}]" [nzLabel]="option" [nzValue]="option">
                         </nz-option>
                         <nz-option>
                             <ng-template #nzOptionTemplate>
@@ -264,23 +264,23 @@
         </div>
         <div class="inputs">
             <span>优惠券：</span>
-            <nz-input [(ngModel)]="inputValue" [nzPlaceHolder]="'0.00'" (ngModelChange)="_console($event)">
+            <nz-input [nzPlaceHolder]="'0.00'">
                 <ng-template #addOnAfter>%</ng-template>
             </nz-input>
             <span>优惠金额：</span>
-            <nz-input [(ngModel)]="inputValue" [nzPlaceHolder]="'0.00'" (ngModelChange)="_console($event)"></nz-input>
+            <nz-input [nzPlaceHolder]="'0.00'"></nz-input>
             <span>优惠后金额：</span>
-            <nz-input [(ngModel)]="inputValue" [nzPlaceHolder]="'0.00'" [nzDisabled]="true"></nz-input>
+            <nz-input [nzPlaceHolder]="'0.00'" [nzDisabled]="true"></nz-input>
             <span>本次付款：</span>
-            <nz-input [(ngModel)]="inputValue" [nzPlaceHolder]="'0.00'"></nz-input>
+            <nz-input [nzPlaceHolder]="'0.00'"></nz-input>
         </div>
         <div class="inputs">
             <span>结算账户：</span>
-            <nz-input [(ngModel)]="inputValue" [nzPlaceHolder]="'0.00'"></nz-input>
+            <nz-input [nzPlaceHolder]="'0.00'"></nz-input>
             <span>本次欠款：</span>
-            <nz-input [(ngModel)]="inputValue" [nzPlaceHolder]="'0.00'" [nzDisabled]="true"></nz-input>
+            <nz-input [nzPlaceHolder]="'0.00'" [nzDisabled]="true"></nz-input>
             <span>采购费用：</span>
-            <nz-input [(ngModel)]="inputValue" [nzPlaceHolder]="'0.00'" [nzDisabled]="true" style="margin-right: 8px;"></nz-input>
+            <nz-input [nzPlaceHolder]="'0.00'" [nzDisabled]="true" style="margin-right: 8px;"></nz-input>
             <i class="anticon anticon-folder-open" style="font-size: 20px;"></i>&nbsp;&nbsp;&nbsp;&nbsp;
             <button nz-button [nzType]="'default'">
                 <span>分摊</span>

@@ -1,14 +1,14 @@
 <div class="head">
     <nz-input style="width: 250px;" [nzPlaceHolder]="'按供应商编号/商品名称/规格型号等查询'"></nz-input>
     &nbsp;&nbsp;&nbsp;&nbsp;
-    <label nz-checkbox [(ngModel)]="_checked">
-        <span>显示禁用客户</span>
+    <label nz-checkbox>
+        <span>显示禁用商品</span>
     </label>
-    <button nz-button [nzType]="'default'" (click)="powerSearch.showModal()">
-        <span>高级搜索</span>
+    <button nz-button [nzType]="'default'">
+        <span>查询</span>
     </button>
     <button class="ml-sm" nz-button [nzType]="'primary'">
-        <span>查询</span>
+        <span>刷新</span>
     </button>
 </div>
 <div class="s-main">
@@ -41,10 +41,10 @@
         </div>
     </div>
     <div class="table-m">
-        <nz-table #nzTable [nzScroll]="_fixHeader?{ y: 640,x: 3000 }:{ y: 640,x: 3000 }" [nzDataSource]="_dataSet" [nzBordered]="true"
+        <nz-table #nzTable [nzScroll]="{ y: 640,x: 3000 }" [nzDataSource]="_dataSet" [nzBordered]="true"
             [nzLoading]="_loading" [nzIsPagination]="true" [nzPageSize]="50" nzShowTotal nzShowSizeChanger nzShowQuickJumper
             [nzShowFooter]="false" [nzShowTitle]="true" [nzSize]="'default'" [nzCustomNoResult]="true" nzPageSizeSelectorValues
-            (nzDataChange)="_displayDataChange($event)">
+           >
             <span nz-table-title class="d-flex justify-content-between">
                 <span>当前分类：{{'??????'}}</span>
                 <span>
@@ -53,7 +53,7 @@
                 </span>
             </span>
             <span noResult>暂无数据</span>
-            <ng-template #nzFixedHeader [ngIf]="_header&&!_fixHeader">
+            <ng-template #nzFixedHeader>
                 <thead nz-thead>
                     <tr>
                         <th nz-th [nzWidth]="'50px'" nzCheckbox>
@@ -63,11 +63,16 @@
                         <th nz-th [nzWidth]="'100px'">
                             <span>操作</span>
                         </th>
-                        <th nz-th [nzWidth]="'130px'">
+                        <th nz-th [nzWidth]="'70px'">
                             <span>图片</span>
                         </th>
                         <th nz-th [nzWidth]="'130px'">
                             <span>商品编号</span>
+                            <nz-table-sort></nz-table-sort>
+                        </th>
+                        <th nz-th [nzWidth]="'130px'">
+                            <span>商品名称</span>
+                            <nz-table-sort></nz-table-sort>
                         </th>
                         <th nz-th [nzWidth]="'130px'">
                             <span>商品标签</span>
@@ -80,6 +85,7 @@
                         </th>
                         <th nz-th [nzWidth]="'130px'">
                             <span>规格型号</span>
+                            <nz-table-sort></nz-table-sort>
                         </th>
                         <th nz-th [nzWidth]="'130px'">
                             <span>商品品牌</span>
@@ -137,7 +143,10 @@
                         <i class="anticon anticon-copy point handle-icon mr-sm"></i>
                         <i class="anticon anticon-delete point handle-icon"></i>
                     </td>
-                    <td nz-td>{{data.a}}</td>
+                    <td nz-td>
+                        <img [_src]="'./2323'" alt="">
+                    </td>
+                    <td nz-td>{{data.b}}</td>
                     <td nz-td>{{data.b}}</td>
                     <td nz-td>{{data.b}}</td>
                     <td nz-td>{{data.b}}</td>

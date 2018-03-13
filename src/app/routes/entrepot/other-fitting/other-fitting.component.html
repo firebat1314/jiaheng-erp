@@ -33,7 +33,7 @@
                 <nz-switch [nzSize]="'small'"></nz-switch>
             </div>
             <!-- <div>
-                    <label nz-checkbox (ngModelChange)="_console($event)">
+                    <label nz-checkbox>
                         <span>自动备份</span>
                     </label>
                 </div> -->
@@ -44,12 +44,12 @@
         </div>
         <div class="m-table">
             <div class="title">组合件：</div>
-            <nz-table #nzTable [nzScroll]="_fixHeader?{ y: 640 }:null" [nzDataSource]="_dataSet" [nzBordered]="_bordered" [nzLoading]="_loading"
-                [nzIsPagination]="false" [nzPageSize]="50" nzShowTotal nzShowQuickJumper nzShowSizeChanger [nzShowFooter]="_footer"
-                [nzShowTitle]="_title" [nzSize]="_size" [nzCustomNoResult]="true">
+            <nz-table #nzTable [nzScroll]="{ y: 640 }" [nzDataSource]="_dataSet" [nzBordered]="true" [nzLoading]="_loading"
+                [nzIsPagination]="false" [nzPageSize]="50" nzShowTotal nzShowQuickJumper nzShowSizeChanger [nzShowFooter]="false"
+                [nzShowTitle]="false" [nzSize]="'default'" [nzCustomNoResult]="true">
                 <span nz-table-title>Title</span>
                 <span noResult>暂无数据</span>
-                <ng-template #nzFixedHeader [ngIf]="_header&&!_fixHeader">
+                <ng-template #nzFixedHeader>
                     <thead nz-thead>
                         <tr>
                             <th nz-th [nzWidth]="'170px'">
@@ -124,12 +124,12 @@
         </div>
         <div class="m-table">
             <div class="title">子件：</div>
-            <nz-table #nzTable [nzScroll]="_fixHeader?{ y: 640 }:null" [nzDataSource]="_dataSet" [nzBordered]="_bordered" [nzLoading]="_loading"
-                [nzIsPagination]="false" [nzPageSize]="50" nzShowTotal nzShowQuickJumper nzShowSizeChanger [nzShowFooter]="_footer"
-                [nzShowTitle]="_title" [nzSize]="_size" [nzCustomNoResult]="true">
+            <nz-table #nzTable [nzScroll]="{ y: 640 }" [nzDataSource]="_dataSet" [nzBordered]="true" [nzLoading]="_loading"
+                [nzIsPagination]="false" [nzPageSize]="50" nzShowTotal nzShowQuickJumper nzShowSizeChanger [nzShowFooter]="false"
+                [nzShowTitle]="false" [nzSize]="'default'" [nzCustomNoResult]="true">
                 <span nz-table-title>Title</span>
                 <span noResult>暂无数据</span>
-                <ng-template #nzFixedHeader [ngIf]="_header&&!_fixHeader">
+                <ng-template #nzFixedHeader>
                     <thead nz-thead>
                         <tr>
                             <th nz-th [nzWidth]="'170px'">
@@ -210,7 +210,7 @@
         </div>
         <!-- <div class="money">
                 <span>拆卸费用：</span>
-                <nz-input [(ngModel)]="inputValue" [nzPlaceHolder]="'0.00'" (ngModelChange)="_console($event)"></nz-input>
+                <nz-input [nzPlaceHolder]="'0.00'"></nz-input>
             </div> -->
         <div class="btn">
             <button nz-button [nzType]="'primary'" routerLink="/entrepot/fitting-search">

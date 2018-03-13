@@ -181,6 +181,7 @@ import { AlainABCModule } from '@delon/abc';
 import { AlainAuthModule } from '@delon/auth';
 import { AlainACLModule } from '@delon/acl';
 import { DelonCacheModule } from '@delon/cache';
+import { ImageConfig } from '@delon/abc/image/image.config';
 
 // region: global config functions
 
@@ -188,7 +189,10 @@ import { DelonCacheModule } from '@delon/cache';
 // export function simpleTableConfig(): SimpleTableConfig {
 //     return { ps: 20 };
 // }
-
+export function imageConfig(): ImageConfig {
+    return  Object.assign(new ImageConfig(), { error:'./assets/img/800-800.jpg' });
+}
+ImageConfig
 // endregion
 
 @NgModule({
@@ -231,6 +235,7 @@ export class DelonModule {
           providers: [
               // TIPS：@delon/abc 有大量的全局配置信息，例如设置所有 `simple-table` 的页码默认为 `20` 行
               // { provide: SimpleTableConfig, useFactory: simpleTableConfig }
+              { provide: ImageConfig, useFactory: imageConfig }
           ]
       };
   }

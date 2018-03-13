@@ -18,7 +18,7 @@
         </div>
         <div class="select-suppliers-modal-main">
             <nz-table #nzTable 
-            [nzScroll]="_fixHeader?{ y: 340 }:null" 
+            [nzScroll]="{ y: 340 }" 
             [nzDataSource]="_dataSet" 
             [nzBordered]="true" 
             [nzLoading]="_loading"
@@ -32,10 +32,10 @@
             [nzSize]="'small'" 
             [nzCustomNoResult]="true" 
             nzPageSizeSelectorValues 
-            (nzDataChange)="_displayDataChange($event)">
+           >
                 <span nz-table-title>Title</span>
                 <span noResult>暂无数据</span>
-                <ng-template #nzFixedHeader [ngIf]="!_fixHeader">
+                <ng-template #nzFixedHeader>
                     <thead nz-thead>
                         <tr>
                             <th nz-th [nzWidth]="'50'" nzCheckbox>

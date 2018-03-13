@@ -13,7 +13,8 @@ export class OrderListComponent implements OnInit {
     userScanner: boolean = true;
     _dataSet = [];
     _loading = false;
-
+    _header
+    
     constructor(
         private http: _HttpClient,
         private _message: NzMessageService

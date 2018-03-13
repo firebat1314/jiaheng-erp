@@ -11,6 +11,7 @@ import { NzMessageService } from 'ng-zorro-antd';
 export class OrderWarehousingComponent implements OnInit {
     num: string = '45454545454545';
     editnum: boolean = false;
+    inputValue;
     userScanner: boolean = true;
     _dataSet = [];
     _loading = false;

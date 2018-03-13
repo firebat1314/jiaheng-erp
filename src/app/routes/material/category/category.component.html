@@ -1,0 +1,38 @@
+<div class="s-main">
+    <div class="table-hd">
+        <div class="d-flex align-items-center">
+            <span class="mr-md">类别</span>
+            <nz-radio-group class="mr-md"  [(ngModel)]="cate">
+                <label nz-radio-button [nzValue]="'a'">
+                    <span>客户</span>
+                </label>
+                <label nz-radio-button [nzValue]="'s'">
+                    <span>供应商</span>
+                </label>
+                <label nz-radio-button [nzValue]="'d'">
+                    <span>商品</span>
+                </label>
+                <label nz-radio-button [nzValue]="'f'">
+                    <span>支出</span>
+                </label>
+                <label nz-radio-button [nzValue]="'g'">
+                    <span>收入</span>
+                </label>
+            </nz-radio-group>
+            <nz-input style="width:150px;" class="mr-sm"></nz-input>
+            <button class="ml-sm" nz-button [nzType]="'primary'" (click)="amendEntrepot.showModal()">
+                <span>查询</span>
+            </button>
+        </div>
+        <div class="btns">
+            <button class="ml-sm" nz-button [nzType]="'primary'" (click)="amendEntrepot.showModal()">
+                <span>新增</span>
+            </button>
+            <button class="ml-sm" nz-button [nzType]="'default'">
+                <span>刷新</span>
+            </button>
+        </div>
+    </div>
+    <router-outlet></router-outlet>
+</div>
+<s-amend-entrepot-modal #amendEntrepot></s-amend-entrepot-modal>

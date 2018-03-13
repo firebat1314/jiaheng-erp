@@ -1,15 +1,15 @@
 <div class="head">
-        <nz-select style="width: 170px;" [(ngModel)]="selectedOption" [nzPlaceHolder]="'请选择客户类别'" nzAllowClear>
-            <nz-option *ngFor="let option of options" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
+        <nz-select style="width: 170px;" [nzPlaceHolder]="'请选择客户类别'" nzAllowClear>
+            <nz-option *ngFor="let option of [{},{},{}]" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
             </nz-option>
         </nz-select>
         &nbsp;&nbsp;
-        <nz-input style="width: 250px;" [nzPlaceHolder]="'供应商编号/供应商名称/联系人/电话等查询'"></nz-input>
+        <nz-input style="width: 250px;" [nzPlaceHolder]="'输入客户编号/名称/联系人/电话查询'"></nz-input>
         &nbsp;&nbsp;&nbsp;&nbsp;
-        <label nz-checkbox [(ngModel)]="_checked">
+        <label nz-checkbox>
             <span>显示禁用客户</span>
         </label>
-        <button nz-button [nzType]="'default'" (click)="powerSearch.showModal()">
+        <button nz-button [nzType]="'default'" >
             <span>高级搜索</span>
         </button>
         <button class="ml-sm" nz-button [nzType]="'primary'">
@@ -46,13 +46,13 @@
             </div>
         </div>
         <div class="table-m">
-            <nz-table #nzTable [nzScroll]="_fixHeader?{ y: 640,x: 1700 }:{ y: 640,x: 1700 }" [nzDataSource]="_dataSet" [nzBordered]="true"
+            <nz-table #nzTable [nzScroll]="{ y: 640,x: 2000 }" [nzDataSource]="_dataSet" [nzBordered]="true"
                 [nzLoading]="_loading" [nzIsPagination]="true" [nzPageSize]="50" nzShowTotal nzShowSizeChanger nzShowQuickJumper
                 [nzShowFooter]="false" [nzShowTitle]="false" [nzSize]="'default'" [nzCustomNoResult]="true" nzPageSizeSelectorValues
-                (nzDataChange)="_displayDataChange($event)">
+               >
                 <span nz-table-title>Title</span>
                 <span noResult>暂无数据</span>
-                <ng-template #nzFixedHeader [ngIf]="_header&&!_fixHeader">
+                <ng-template #nzFixedHeader>
                     <thead nz-thead>
                         <tr>
                             <th nz-th [nzWidth]="'50px'" nzCheckbox>

@@ -22,6 +22,8 @@ export class InvoiceSearchComponent implements OnInit {
     _displayData: Array<any> = [];
     _operating = false;
     _indeterminate = false;
+    
+    _header = true;
     constructor(
         private http: _HttpClient,
         private _message: NzMessageService

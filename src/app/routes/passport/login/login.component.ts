@@ -41,7 +41,7 @@ export class UserLoginComponent implements OnInit {
         this.isLoading = true;
         setTimeout(() => {
             this.isLoading = false;
-            this.router.navigate(['/home']);
+            this.router.navigate(['/trade/order']);
         }, 1000);
     }
 

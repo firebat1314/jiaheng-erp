@@ -12,8 +12,8 @@
     </ng-template>
     <ng-template #ModalContent>
         <div class="select-suppliers-modal-head" style="margin-bottom: 16px;">
-            <nz-select style="width: 200px;" [(ngModel)]="selectedOption" [nzPlaceHolder]="'类别'" nzAllowClear>
-                <nz-option *ngFor="let option of options" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
+            <nz-select style="width: 200px;" [nzPlaceHolder]="'类别'" nzAllowClear>
+                <nz-option *ngFor="let option of [{},{},{}]" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
                 </nz-option>
             </nz-select>&nbsp;&nbsp;
             <nz-input style="width: 200px;" [nzType]="'text'" [nzPlaceHolder]="'输入编号/名称/联系人/电话查询'"></nz-input>&nbsp;&nbsp;
@@ -21,7 +21,7 @@
         </div>
         <div class="select-suppliers-modal-main">
             <nz-table #nzTable 
-            [nzScroll]="_fixHeader?{ y: 340 }:null" 
+            [nzScroll]="{ y: 340 }" 
             [nzDataSource]="_dataSet" 
             [nzBordered]="true" 
             [nzLoading]="_loading"
@@ -35,10 +35,10 @@
             [nzSize]="'small'" 
             [nzCustomNoResult]="true" 
             nzPageSizeSelectorValues 
-            (nzDataChange)="_displayDataChange($event)">
+           >
                 <span nz-table-title>Title</span>
                 <span noResult>暂无数据</span>
-                <ng-template #nzFixedHeader [ngIf]="!_fixHeader">
+                <ng-template #nzFixedHeader>
                     <thead nz-thead>
                         <tr>
                             <th nz-th [nzWidth]="'70px'" nzCheckbox>

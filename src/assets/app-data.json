@@ -150,6 +150,24 @@
                         },{
                             "text": "收款单",
                             "link": "/capital/proceeds"
+                        },{
+                            "text": "付款单查询",
+                            "link": "/capital/pay-s"
+                        },{
+                            "text": "核销单查询",
+                            "link": "/capital/verification-s"
+                        },{
+                            "text": "其他收入单查询",
+                            "link": "/capital/other-revenue-s"
+                        },{
+                            "text": "其他支出单查询",
+                            "link": "/capital/other-expenses-s"
+                        },{
+                            "text": "转账单查询",
+                            "link": "/capital/transfer-s"
+                        },{
+                            "text": "收款单查询",
+                            "link": "/capital/proceeds-s"
                         }
                     ]
                 },
@@ -165,20 +183,14 @@
                             "text": "供应商管理",
                             "link": "/material/cqe"
                         },{
-                            "text": "供应商类型",
-                            "link": "/material/cqe-c"
+                            "text": "客户管理",
+                            "link": "/material/crm"
                         },{
                             "text": "计量单位管理",
                             "link": "/material/measure-unit"
                         },{
-                            "text": "客户管理",
-                            "link": "/material/crm"
-                        },{
-                            "text": "客户类型",
-                            "link": "/material/crm-c"
-                        },{
                             "text": "商品管理",
-                            "link": "/material/merchandise-c"
+                            "link": "/material/merchandise"
                         },{
                             "text": "结算方法",
                             "link": "/material/settlement-method"
@@ -191,6 +203,21 @@
                         },{
                             "text": "商品品牌",
                             "link": "/material/brand"
+                        },{
+                            "text": "客户类型",
+                            "link": "/material/category/crm-c"
+                        },{
+                            "text": "供应商类型",
+                            "link": "/material/category/cqe-c"
+                        },{
+                            "text": "商品类别",
+                            "link": "/material/category/merchandise-c"
+                        },{
+                            "text": "支出类别",
+                            "link": "/material/category/expense-c"
+                        },{
+                            "text": "收入类别",
+                            "link": "/material/category/income-c"
                         }
                     ]
                 },

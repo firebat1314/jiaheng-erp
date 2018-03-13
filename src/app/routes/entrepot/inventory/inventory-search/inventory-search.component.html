@@ -1,23 +1,23 @@
 <div class="head">
     <div class="date">
         <span>日期：</span>
-        <nz-datepicker [(ngModel)]="_date"></nz-datepicker>
-        <nz-select style="width: 120px;" [(ngModel)]="selectedOption" [nzPlaceHolder]="'全部仓库'" nzAllowClear>
-            <nz-option *ngFor="let option of options" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
+        <nz-datepicker ></nz-datepicker>
+        <nz-select style="width: 120px;" [nzPlaceHolder]="'全部仓库'" nzAllowClear>
+            <nz-option *ngFor="let option of [{},{},{}]" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
             </nz-option>
         </nz-select>
-        <nz-select style="width: 120px;" [(ngModel)]="selectedOption" [nzPlaceHolder]="'类别'" nzAllowClear>
-            <nz-option *ngFor="let option of options" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
+        <nz-select style="width: 120px;" [nzPlaceHolder]="'类别'" nzAllowClear>
+            <nz-option *ngFor="let option of [{},{},{}]" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
             </nz-option>
         </nz-select>
     </div>
     <div class="goods">
         商品：
-        <nz-input [(ngModel)]="inputValue" [nzPlaceHolder]="'商品'" (ngModelChange)="_console($event)"></nz-input>
-        <label nz-checkbox (ngModelChange)="_console($event)">
+        <nz-input [nzPlaceHolder]="'商品'"></nz-input>
+        <label nz-checkbox>
             <span>零库存</span>
         </label>
-        <label nz-checkbox (ngModelChange)="_console($event)">
+        <label nz-checkbox>
             <span>显示禁用商品</span>
         </label>
     </div>
@@ -49,12 +49,12 @@
         </div>
     </div> -->
     <div class="table-m">
-        <nz-table #nzTable [nzScroll]="_fixHeader?{ y: 640 }:null" [nzDataSource]="_dataSet" [nzBordered]="_bordered" [nzLoading]="_loading"
+        <nz-table #nzTable [nzScroll]="{ y: 640 }" [nzDataSource]="_dataSet" [nzBordered]="_bordered" [nzLoading]="_loading"
             [nzIsPagination]="_pagination" [nzPageSize]="50" nzShowTotal nzShowQuickJumper nzShowSizeChanger [nzShowFooter]="_footer"
             [nzShowTitle]="_title" [nzSize]="_size" [nzCustomNoResult]="true">
             <span nz-table-title>Title</span>
             <span noResult>暂无数据</span>
-            <ng-template #nzFixedHeader [ngIf]="_header&&!_fixHeader">
+            <ng-template #nzFixedHeader>
                 <thead nz-thead>
                     <tr>
                         <th nz-th [nzWidth]="'70px'">

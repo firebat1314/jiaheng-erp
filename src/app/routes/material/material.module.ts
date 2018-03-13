@@ -8,17 +8,20 @@ import { SettlementMethodComponent } from './settlement-method/settlement-method
 import { CrmComponent } from './crm/crm.component';
 import { CpmComponent } from './cpm/cpm.component';
 import { MerchandiseControlComponent } from './merchandise-control/merchandise-control.component';
-import { MerchandiseControlTwoComponent } from './merchandise-control-two/merchandise-control-two.component';
 import { PersonnelAdminComponent } from './personnel-admin/personnel-admin.component';
 import { BrandComponent } from './brand/brand.component';
-import { CqeCategoryComponent } from './cqe/cqe-category/cqe-category.component';
-import { CrmCategoryComponent } from './crm/crm-category/crm-category.component';
+import { CategoryComponent } from './category/category.component';
+import { ExpenseComponent } from './category/expense/expense.component';
+import { IncomeComponent } from './category/income/income.component';
+import { MerchandiseCategoryComponent } from './category/merchandise-category/merchandise-category.component';
+import { CqeCategoryComponent } from './category/cqe-category/cqe-category.component';
+import { CrmCategoryComponent } from './category/crm-category/crm-category.component';
 
 @NgModule({
   imports: [
     SharedModule,
     MaterialRoutingModule
   ],
-  declarations: [WmsComponent, CqeComponent, MeasureUnitComponent, SettlementMethodComponent, CrmComponent, CpmComponent, MerchandiseControlComponent, MerchandiseControlTwoComponent, PersonnelAdminComponent, BrandComponent, CqeCategoryComponent, CrmCategoryComponent]
+  declarations: [WmsComponent, CqeComponent, MeasureUnitComponent, SettlementMethodComponent, CrmComponent, CpmComponent, MerchandiseControlComponent, PersonnelAdminComponent, BrandComponent, CqeCategoryComponent, CrmCategoryComponent, MerchandiseCategoryComponent, CategoryComponent, ExpenseComponent, IncomeComponent]
 })
 export class MaterialModule { }

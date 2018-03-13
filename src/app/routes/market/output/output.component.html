@@ -6,7 +6,7 @@
                     <span>
                         <i class="text-red">*</i>客户：</span>
                     <nz-select style="width: 150px;" nzAllowClear [nzPlaceHolder]="'客户'" [nzFilter]="false" [nzNotFoundContent]="'无法找到'" nzShowSearch>
-                        <nz-option *ngFor="let option of searchOptions" [nzLabel]="option" [nzValue]="option">
+                        <nz-option *ngFor="let option of [{},{},{}]" [nzLabel]="option" [nzValue]="option">
                         </nz-option>
                         <nz-option>
                             <ng-template #nzOptionTemplate>
@@ -22,7 +22,7 @@
                 <div class="item">
                     <span>销售人员：</span>
                     <nz-select style="width: 150px;" nzAllowClear [nzPlaceHolder]="'（空）'" [nzFilter]="false" [nzNotFoundContent]="'无法找到'" nzShowSearch>
-                        <nz-option *ngFor="let option of searchOptions" [nzLabel]="option" [nzValue]="option">
+                        <nz-option *ngFor="let option of [{},{},{}]" [nzLabel]="option" [nzValue]="option">
                         </nz-option>
                         <nz-option>
                             <ng-template #nzOptionTemplate>
@@ -281,7 +281,7 @@
             <span>本次收款：</span>
             <nz-input [nzPlaceHolder]="'0.00'"></nz-input>
             <span>结算账户：</span>
-            <nz-select [(ngModel)]="selectedOption" [nzPlaceHolder]="'（空）'" nzAllowClear>
+            <nz-select [nzPlaceHolder]="'（空）'" nzAllowClear>
                 <nz-option *ngFor="let option of [{},{},{}]" [nzLabel]="1" [nzValue]="1">
                 </nz-option>
             </nz-select>

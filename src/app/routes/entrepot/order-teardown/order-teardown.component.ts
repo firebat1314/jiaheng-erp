@@ -20,7 +20,6 @@ export class OrderTeardownComponent implements OnInit {
     _header = true;
     _title = false;
     _footer = false;
-    _fixHeader = false;
     _size = 'default';
     ngOnInit() {
         this.options = [

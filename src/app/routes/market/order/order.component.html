@@ -5,7 +5,7 @@
             <div class="item">
                <span><i class="text-red">*</i>客户：</span>
                <nz-select style="width: 150px;" nzAllowClear [nzPlaceHolder]="'供应商'" [nzFilter]="false" [nzNotFoundContent]="'无法找到'" nzShowSearch>
-                  <nz-option *ngFor="let option of searchOptions" [nzLabel]="option" [nzValue]="option">
+                  <nz-option *ngFor="let option of [{},{},{}]" [nzLabel]="option" [nzValue]="option">
                   </nz-option>
                   <nz-option>
                      <ng-template #nzOptionTemplate>
@@ -21,7 +21,7 @@
             <div class="item">
                <span>销售人员：</span>
                <nz-select style="width: 150px;" nzAllowClear [nzPlaceHolder]="'（空）'" [nzFilter]="false" [nzNotFoundContent]="'无法找到'" nzShowSearch>
-                        <nz-option *ngFor="let option of searchOptions" [nzLabel]="option" [nzValue]="option">
+                        <nz-option *ngFor="let option of [{},{},{}]" [nzLabel]="option" [nzValue]="option">
                         </nz-option>
                         <nz-option>
                            <ng-template #nzOptionTemplate>
@@ -176,9 +176,10 @@
                      <th nz-th [nzWidth]="'100px'">
                         <span>销售金额</span>
                      </th>
-                     <th nz-th>
+                     <th nz-th [nzWidth]="'200px'">
                         <span>备注</span>
                      </th>
+                     <th nz-th></th>
                   </tr>
                </thead>
             </ng-template>
@@ -262,7 +263,7 @@
                      <nz-input [nzPlaceHolder]="'数量'"></nz-input>
                   </td>
                   <td nz-td>
-                     <nz-input [nzPlaceHolder]="'购货单价'"></nz-input>
+                     <nz-input [nzPlaceHolder]="'销售单价'"></nz-input>
                   </td>
                   <td nz-td>
                      <nz-input [nzPlaceHolder]="'折扣率（%）'"></nz-input>
@@ -276,7 +277,8 @@
                   <td nz-td>
                      <nz-input [nzPlaceHolder]="'备注'"></nz-input>
                   </td>
-               </tr>
+                  <td nz-td></td>
+                </tr>
                <tr nz-tbody-tr class="hover-tr">
                   <td nz-td class="first-td"></td>
                   <td nz-td class="text-left">合计：</td>
@@ -299,7 +301,7 @@
                   <td nz-td class="text-right">0.00</td>
                   <td nz-td></td>
                   <td nz-td></td>
-               </tr>
+                </tr>
             </tbody>
             <span nz-table-footer>footer</span>
          </nz-table>
@@ -311,13 +313,13 @@
       </div>
       <div class="money inputs">
          <span>优惠券：</span>
-         <nz-input style="" [(ngModel)]="inputValue" [nzPlaceHolder]="'0.00'" (ngModelChange)="_console($event)">
+         <nz-input style="" [nzPlaceHolder]="'0.00'">
             <ng-template #addOnAfter>%</ng-template>
          </nz-input>
          <span>优惠金额：</span>
-         <nz-input style="" [(ngModel)]="inputValue" [nzPlaceHolder]="'0.00'" (ngModelChange)="_console($event)"></nz-input>
+         <nz-input style="" [nzPlaceHolder]="'0.00'"></nz-input>
          <span>优惠后金额：</span>
-         <nz-input style="" [(ngModel)]="inputValue" [nzPlaceHolder]="'0.00'" [nzDisabled]="true"></nz-input>
+         <nz-input style="" [nzPlaceHolder]="'0.00'" [nzDisabled]="true"></nz-input>
       </div>
       <!-- <div class="ziduan">
               <i class="anticon anticon-edit"></i>
