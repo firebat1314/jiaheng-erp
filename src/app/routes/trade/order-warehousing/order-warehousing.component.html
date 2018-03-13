@@ -165,7 +165,7 @@
                         <td nz-td>
                             <nz-input *ngIf="userScanner" [nzPlaceHolder]="'商品'"></nz-input>
                             <nz-popover [nzTrigger]="'click'" [nzPlacement]="'bottomLeft'">
-                                    <nz-input nz-popover (input)="selectGoodModal($event)" *ngIf="!userScanner" [(ngModel)]="siteName">
+                                    <nz-input nz-popover *ngIf="!userScanner" [(ngModel)]="siteName">
                                         <ng-template #addOnAfter>选择</ng-template>
                                     </nz-input>
                                     <ng-template #nzTemplate>
@@ -179,7 +179,7 @@
                         <td nz-td>
                             <nz-input *ngIf="userScanner" [nzPlaceHolder]="'商品编号'"></nz-input>
                             <nz-popover [nzTrigger]="'click'" [nzPlacement]="'bottomLeft'">
-                                    <nz-input nz-popover (input)="selectGoodModal($event)" *ngIf="!userScanner" [(ngModel)]="siteName">
+                                    <nz-input nz-popover *ngIf="!userScanner" [(ngModel)]="siteName">
                                         <ng-template #addOnAfter>批量</ng-template>
                                     </nz-input>
                                     <ng-template #nzTemplate>

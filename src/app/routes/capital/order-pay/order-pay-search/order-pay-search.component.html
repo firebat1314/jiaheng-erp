@@ -1,18 +1,12 @@
 <div class="head">
-    <nz-input style="width: 180px;" [nzPlaceHolder]="'请输入单据号或供应商或备注'"></nz-input>
-    &nbsp;&nbsp;
+    <nz-input style="width: 220px;" [nzPlaceHolder]="'请输入单据号或客户名或备注'"></nz-input>
+    &nbsp;&nbsp;&nbsp;&nbsp;
     <span>日期：</span>
-    <nz-datepicker style="width: 130px;"
-        nzShowTime [nzFormat]="'YYYY-MM-DD'" [nzPlaceHolder]="'开始日期'"></nz-datepicker>
+    <nz-datepicker style="width: 130px;" nzShowTime [nzFormat]="'YYYY-MM-DD'" [nzPlaceHolder]="'开始日期'"></nz-datepicker>
     <span style="color: #999999;white-space: nowrap;">&nbsp;--&nbsp;</span>
-    <nz-datepicker style="width: 130px;" 
-        [nzFormat]="'YYYY-MM-DD'" [nzPlaceHolder]="'结束日期'"></nz-datepicker>&nbsp;&nbsp;
-    <span>销售人员：</span>
+    <nz-datepicker style="width: 130px;" [nzFormat]="'YYYY-MM-DD'" [nzPlaceHolder]="'结束日期'"></nz-datepicker>&nbsp;&nbsp;&nbsp;&nbsp;
+    <span>付款人：</span>
     <nz-select style="width: 130px;" [nzPlaceHolder]="'（空）'" nzAllowClear>
-        <nz-option *ngFor="let option of [{},{},{}]" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
-        </nz-option>
-    </nz-select>&nbsp;&nbsp;
-    <nz-select style="width: 130px;" [nzPlaceHolder]="'付款状态'" nzAllowClear>
         <nz-option *ngFor="let option of [{},{},{}]" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
         </nz-option>
     </nz-select>
@@ -25,49 +19,35 @@
 </div>
 <div class="s-main">
     <div class="table-hd">
-        <div>
-            <span>
-                <i class="anticon anticon-setting"></i>
-            </span>
+        <div class="point">
+            <i class="anticon anticon-setting"></i>&nbsp;
             <span>列设置</span>
         </div>
         <div class="btns">
             <button nz-button [nzType]="'primary'">
                 <span>新增</span>
             </button>
-            <button nz-button [nzType]="'default'">
+            <button nz-button [nzType]="'primary'" nzGhost>
                 <span>打印</span>
             </button>
-            <nz-dropdown>
-                <button nz-button [nzType]="'default'" nz-dropdown>
-                    <span>导入</span>
-                    <i class="anticon anticon-down"></i>
-                </button>
-                <ul nz-menu>
-                    <li nz-menu-item>
-                        <a>导入</a>
-                    </li>
-                    <li nz-menu-item>
-                        <a>导出</a>
-                    </li>
-                </ul>
-            </nz-dropdown>
+            <button nz-button [nzType]="'default'">
+                <span>导出</span>
+            </button>
             <button nz-button [nzType]="'default'">
                 <span>删除</span>
             </button>
         </div>
     </div>
     <div class="table-m">
-        <nz-table #nzTable [nzScroll]="{ y: 640,x: 1900 }" [nzDataSource]="_dataSet" [nzBordered]="true"
-            [nzLoading]="_loading" [nzIsPagination]="true" [nzPageSize]="50" nzShowTotal nzShowSizeChanger nzShowQuickJumper
-            [nzShowFooter]="false" [nzShowTitle]="false" [nzSize]="'default'" [nzCustomNoResult]="true" nzPageSizeSelectorValues
-           >
+        <nz-table #nzTable [nzScroll]="{ y: 640,x: 1900 }" [nzDataSource]="_dataSet" [nzBordered]="true" [nzLoading]="_loading" [nzIsPagination]="true"
+            [nzPageSize]="50" nzShowTotal nzShowSizeChanger nzShowQuickJumper [nzShowFooter]="false" [nzShowTitle]="false" [nzSize]="'default'"
+            [nzCustomNoResult]="true" nzPageSizeSelectorValues (nzDataChange)="_displayDataChange($event)">
             <span nz-table-title>Title</span>
             <span noResult>暂无数据</span>
             <ng-template #nzFixedHeader>
                 <thead nz-thead>
                     <tr>
-                        <th nz-th [nzWidth]="'70px'" nzCheckbox>
+                        <th nz-th [nzWidth]="'50px'" nzCheckbox>
                             <label nz-checkbox [(ngModel)]="_allChecked" [nzIndeterminate]="_indeterminate" (ngModelChange)="_checkAll($event)">
                             </label>
                         </th>
@@ -81,44 +61,42 @@
                             <span>单据编号</span>
                         </th>
                         <th nz-th [nzWidth]="'110px'">
-                            <span>销售人员</span>
+                            <span>购货单位</span>
                         </th>
                         <th nz-th [nzWidth]="'110px'">
-                            <span>会员手机号</span>
+                            <span>结算账户</span>
                         </th>
                         <th nz-th [nzWidth]="'110px'">
-                            <span>收银员</span>
+                            <span>付款金额</span>
                         </th>
                         <th nz-th [nzWidth]="'110px'">
-                            <span>单据来源</span>
+                            <span>收款方式</span>
                         </th>
                         <th nz-th [nzWidth]="'110px'">
-                            <span>源销货订单号</span>
+                            <span>结算号</span>
                         </th>
                         <th nz-th [nzWidth]="'110px'">
-                            <span>原销货单号</span>
+                            <span>分录备注</span>
                         </th>
                         <th nz-th [nzWidth]="'110px'">
-                            <span>客户</span>
+                            <span>付款合计</span>
                         </th>
                         <th nz-th [nzWidth]="'110px'">
-                            <span>数量</span>
+                            <span>本次核销金额</span>
                         </th>
                         <th nz-th [nzWidth]="'110px'">
-                            <span>销售金额</span>
+                            <span>整单折扣</span>
                         </th>
                         <th nz-th [nzWidth]="'110px'">
-                            <span>优惠后金额</span>
+                            <span>本次预付款</span>
                         </th>
                         <th nz-th [nzWidth]="'110px'">
-                            <span>已收款</span>
+                            <span>收款人</span>
                         </th>
                         <th nz-th [nzWidth]="'110px'">
-                            <span>退款状态</span>
-                        </th>
-                        <th nz-th>
                             <span>制单人</span>
                         </th>
+                        <th nz-th></th>
                     </tr>
                 </thead>
             </ng-template>
@@ -142,7 +120,6 @@
                     <td nz-td>{{data.b}}</td>
                     <td nz-td>{{data.b}}</td>
                     <td nz-td>{{data.b}}</td>
-                    <td nz-td>{{data.b}}</td>
                     <td nz-td>
                         <span>
                             <a>{{data.b}}</a>
@@ -151,6 +128,7 @@
                             <span nz-table-divider></span>
                         </span>
                     </td>
+                    <td nz-td></td>
                 </tr>
             </tbody>
             <span nz-table-footer>footer</span>

@@ -1,4 +1,135 @@
-<div class="content__title">
-    <h1>Page Name</h1>
+<div class="s-wrap">
+    <div class="s-header">
+        <div class="h-w">
+            <div class="sub left">
+                <div class="item">
+                    <span>
+                        <span>客户：</span>
+                    </span>
+                    <nz-select style="width: 150px;" nzAllowClear [nzPlaceHolder]="'（空）'" [nzFilter]="false" [nzNotFoundContent]="'无法找到'" nzShowSearch>
+                        <nz-option *ngFor="let option of optional" [nzLabel]="option.id" [nzValue]="option.value">
+                        </nz-option>
+                        <nz-option *ngIf="optional">
+                            <ng-template #nzOptionTemplate>
+                                <i class="anticon anticon-plus"></i>
+                                <span> 新增客户</span>
+                            </ng-template>
+                        </nz-option>
+                    </nz-select>
+                    <button nz-button>
+                        <i class="anticon anticon-ellipsis"></i>
+                    </button>
+                </div>
+                <div class="item">
+                    <span>单据日期：</span>
+                    <nz-datepicker style="width: 110px;"></nz-datepicker>
+                </div>
+            </div>
+            <div class="sub right">
+                <div class="item editnum">
+                    <span>单据编号：</span>
+                    <nz-input style="width: 150px;" [ngModel]="num" (nzBlur)="editnum=false;" *ngIf="editnum"></nz-input>
+                    <span class="txt" *ngIf="!editnum" (click)="editnum=true">
+                        <span>{{num}}</span>
+                        <i class="anticon anticon-edit"></i>
+                    </span>
+                </div>
+                <button nz-button [nzType]="'primary'">
+                    <span>保存并新增</span>
+                </button>
+                <button nz-button [nzType]="'default'">
+                    <span>保存</span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="s-main">
+        <div class="m-table">
+            <div class="title">
+                <div class="point">
+                    <i class="anticon anticon-setting"></i>&nbsp;
+                    <span>列设置</span>
+                </div>
+            </div>
+            <nz-table #nzTable [nzScroll]="{ y: 640,x: 1900 }" [nzDataSource]="_dataSet" [nzBordered]="true" [nzLoading]="_loading" [nzIsPagination]="false"
+                [nzPageSize]="50" nzShowTotal nzShowQuickJumper nzShowSizeChanger [nzShowFooter]="false" [nzShowTitle]="false"
+                [nzSize]="'default'" [nzCustomNoResult]="true">
+                <span nz-table-title>Title</span>
+                <span noResult>暂无数据</span>
+                <ng-template #nzFixedHeader>
+                    <thead nz-thead>
+                        <tr>
+                            <th nz-th [nzWidth]="'50px'">
+                                <i class="anticon anticon-setting"></i>
+                            </th>
+                            <th nz-th [nzWidth]="'180px'">
+                                <i class="text-red">*</i>
+                                <span>收入类别</span>
+                            </th>
+                            <th nz-th [nzWidth]="'230px'">
+                                <i class="text-red">*</i>
+                                <span>金额</span>
+                            </th>
+                            <th nz-th [nzWidth]="'230px'">
+                                <span>备注</span>
+                            </th>
+                            <th nz-th></th>
+                        </tr>
+                    </thead>
+                </ng-template>
+                <tbody nz-tbody>
+                    <tr nz-tbody-tr class="hover-tr" *ngFor="let item of _dataSet;let i = index">
+                        <td nz-td class="first-td">
+                            <span>{{i+1}}</span>
+                            <div class="btns">
+                                <span class="plus" (click)="addTr(i)">
+                                    <i class="anticon anticon-plus"></i>
+                                </span>
+                                <span class="minus" (click)="removeTr(i)">
+                                    <i class="anticon anticon-minus"></i>
+                                </span>
+                            </div>
+                        </td>
+                        <td nz-td>
+                            <nz-select style="width: 100%;" nzAllowClear [nzPlaceHolder]="'收入类别'" [nzNotFoundContent]="'无法找到'" nzShowSearch>
+                                <nz-option *ngFor="let option of optional" [nzLabel]="option.id" [nzValue]="option.value">
+                                </nz-option>
+                            </nz-select>
+                        </td>
+                        <td nz-td>
+                            <nz-input [nzPlaceHolder]="'金额'"></nz-input>
+                        </td>
+                        <td nz-td>
+                            <nz-input [nzPlaceHolder]="'备注'"></nz-input>
+                        </td>
+                        <td nz-td></td>
+                    </tr>
+                    <tr nz-tbody-tr class="hover-tr">
+                        <td nz-td class="first-td"></td>
+                        <td nz-td class="text-left">合计：</td>
+                        <td nz-td></td>
+                        <td nz-td></td>
+                        <td nz-td></td>
+                    </tr>
+                </tbody>
+                <span nz-table-footer>footer</span>
+            </nz-table>
+        </div>
+    </div>
+    <div class="s-foot">
+        <div class="money inputs">
+            <span>结算账户：</span>
+            <nz-select [nzPlaceHolder]="'现金'"></nz-select>
+            <span>收款金额：</span>
+            <nz-input [nzPlaceHolder]="'0.00'" [nzDisabled]="true"></nz-input>
+        </div>
+        <div class="btn">
+            <button nz-button [nzType]="'primary'" routerLink="/trade/order-search">
+                <span>历史单据</span>
+            </button>
+            <button nz-button [nzType]="'default'">
+                <span>操作日志</span>
+            </button>
+        </div>
+    </div>
 </div>
-<pro-header [title]="'Page Name'"></pro-header>

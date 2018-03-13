@@ -19,7 +19,7 @@ const routes: Routes = [
   { path: 'other-revenue', component: OtherRevenueComponent },
   { path: 'proceeds', component: ProceedsComponent },
   { path: 'transfer', component: TransferComponent },
-  { path: 'verification', component: TransferComponent },
+  { path: 'verification', component: VerificationComponent },
   { path: 'pay-s', component: OrderPaySearchComponent },
   { path: 'other-expenses-s', component: OtherExpensesSearchComponent },
   { path: 'other-revenue-s', component: OtherRevenueSearchComponent },

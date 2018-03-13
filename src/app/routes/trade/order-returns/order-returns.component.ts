@@ -35,7 +35,4 @@ export class OrderReturnsComponent implements OnInit {
             this._message.warning('至少保留一条分录！');
         }
     }
-    selectGoodModal(e){
-        console.log(e)
-    }
 }
