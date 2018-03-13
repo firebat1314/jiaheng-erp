@@ -60,7 +60,7 @@
         <div class="table-m">
             <nz-table #nzTable [nzScroll]="{ y: 640,x: 1900 }" [nzDataSource]="_dataSet" [nzBordered]="true"
                 [nzLoading]="_loading" [nzIsPagination]="true" [nzPageSize]="50" nzShowTotal nzShowSizeChanger nzShowQuickJumper
-                [nzShowFooter]="false" [nzShowTitle]="false" [nzSize]="'default'" [nzCustomNoResult]="true" nzPageSizeSelectorValues
+                [nzShowFooter]="false" [nzShowTitle]="false" [nzSize]="'default'" [nzCustomNoResult]="true" nzPageSizeSelectorValues (nzDataChange)="_displayDataChange($event)"
                >
                 <span nz-table-title>Title</span>
                 <span noResult>暂无数据</span>

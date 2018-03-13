@@ -49,7 +49,7 @@
         <div class="table-m">
             <nz-table #nzTable [nzScroll]="{ y: 640 }" [nzDataSource]="_dataSet" [nzBordered]="_bordered" [nzLoading]="_loading"
                 [nzIsPagination]="_pagination" [nzPageSize]="50" nzShowTotal nzShowSizeChanger nzShowQuickJumper [nzShowFooter]="_footer"
-                [nzShowTitle]="_title" [nzSize]="_size" [nzCustomNoResult]="true" nzPageSizeSelectorValues>
+                [nzShowTitle]="_title" [nzSize]="_size" [nzCustomNoResult]="true" nzPageSizeSelectorValues (nzDataChange)="_displayDataChange($event)" >
                 <span nz-table-title>Title</span>
                 <span noResult>暂无数据</span>
                 <ng-template #nzFixedHeader>

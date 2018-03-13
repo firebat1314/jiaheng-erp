@@ -81,6 +81,7 @@
         [nzSize]="'default'" 
         [nzCustomNoResult]="true" 
         nzPageSizeSelectorValues 
+        (nzDataChange)="_displayDataChange($event)"
        >
             <span nz-table-title>Title</span>
             <span noResult>暂无数据</span>
