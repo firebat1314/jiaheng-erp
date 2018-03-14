@@ -56,7 +56,7 @@
     <div class="s-main">
         <div class="m-table">
             <div class="title">组合件：</div>
-            <nz-table #nzTable [nzScroll]="{ y: 640,x: 2500 }" [nzDataSource]="_dataSet" [nzBordered]="true" [nzLoading]="_loading" [nzIsPagination]="false"
+            <nz-table #nzTable [nzScroll]="{ y: 640,x: 3000 }" [nzDataSource]="_dataSet" [nzBordered]="true" [nzLoading]="_loading" [nzIsPagination]="false"
                 [nzPageSize]="50" nzShowTotal nzShowQuickJumper nzShowSizeChanger [nzShowFooter]="false" [nzShowTitle]="false"
                 [nzSize]="'default'" [nzCustomNoResult]="true">
                 <span nz-table-title>Title</span>
@@ -72,58 +72,58 @@
                                 <span>商品--扫描枪录入</span>
                                 <nz-switch [(ngModel)]="userScanner" [nzSize]="'small'"></nz-switch>
                             </th>
-                            <th nz-th [nzWidth]="'200px'">
+                            <th nz-th [nzWidth]="'220px'">
                                 <i style="color: #e60000;">*</i>
                                 <span>商品编号--扫描枪录入</span>
                                 <nz-switch [(ngModel)]="userScanner" [nzSize]="'small'"></nz-switch>
                             </th>
-                            <th nz-th [nzWidth]="'100px'">
+                            <th nz-th [nzWidth]="'140px'">
                                 <i style="color: #e60000;">*</i>
                                 <span>规格型号</span>
                             </th>
-                            <th nz-th [nzWidth]="'100px'">
+                            <th nz-th [nzWidth]="'140px'">
                                 <i style="color: #e60000;">*</i>
                                 <span>球镜</span>
                             </th>
-                            <th nz-th [nzWidth]="'100px'">
+                            <th nz-th [nzWidth]="'140px'">
                                 <i style="color: #e60000;">*</i>
                                 <span>柱镜</span>
                             </th>
-                            <th nz-th [nzWidth]="'100px'">
+                            <th nz-th [nzWidth]="'140px'">
                                 <i style="color: #e60000;">*</i>
                                 <span>轴位</span>
                             </th>
-                            <th nz-th [nzWidth]="'100px'">
+                            <th nz-th [nzWidth]="'140px'">
                                 <i style="color: #e60000;">*</i>
                                 <span>通道</span>
                             </th>
-                            <th nz-th [nzWidth]="'100px'">
+                            <th nz-th [nzWidth]="'140px'">
                                 <i style="color: #e60000;">*</i>
                                 <span>ADD</span>
                             </th>
-                            <th nz-th [nzWidth]="'100px'">
+                            <th nz-th [nzWidth]="'140px'">
                                 <i style="color: #e60000;">*</i>
                                 <span>颜色</span>
                             </th>
-                            <th nz-th [nzWidth]="'100px'">
+                            <th nz-th [nzWidth]="'140px'">
                                 <i style="color: #e60000;">*</i>
                                 <span>直径</span>
                             </th>
-                            <th nz-th [nzWidth]="'100px'">
+                            <th nz-th [nzWidth]="'140px'">
                                 <i style="color: #e60000;">*</i>
                                 <span>左/右</span>
                             </th>
-                            <th nz-th [nzWidth]="'100px'">
+                            <th nz-th [nzWidth]="'140px'">
                                 <i style="color: #e60000;">*</i>
                                 <span>单位</span>
                             </th>
-                            <th nz-th [nzWidth]="'120px'">
+                            <th nz-th [nzWidth]="'140px'">
                                 <i style="color: #e60000;">*</i>
                                 <span>仓库</span>
                                 <nz-popconfirm [nzPlacement]="'bottomLeft'">
                                     <ng-template #nzTemplate>
                                         <div style="margin: 5px 0;">打折打折打折打折打折</div>
-                                        <nz-input style="margin: 10px 0;" [nzPlaceHolder]="'打折'">
+                                        <nz-input [nzPlaceHolder]="'打折'">
                                             <ng-template #addOnAfter>%</ng-template>
                                         </nz-input>
                                         <div style="text-align: right;margin: 5px 0;">
@@ -133,11 +133,11 @@
                                     <button style="margin-left: 3px;" nz-popconfirm nz-button [nzSize]="'small'">批量</button>
                                 </nz-popconfirm>
                             </th>
-                            <th nz-th [nzWidth]="'100px'">
+                            <th nz-th [nzWidth]="'140px'">
                                 <i style="color: #e60000;">*</i>
                                 <span>数量</span>
                             </th>
-                            <th nz-th [nzWidth]="'100px'">
+                            <th nz-th [nzWidth]="'140px'">
                                 <span>购货单价</span>
                             </th>
                             <th nz-th [nzWidth]="'150px'">
@@ -170,15 +170,16 @@
                                     <button style="margin-left: 3px;" nz-popconfirm nz-button [nzSize]="'small'">批量</button>
                                 </nz-popconfirm>
                             </th>
-                            <th nz-th [nzWidth]="'100px'">
+                            <th nz-th [nzWidth]="'140px'">
                                 <span>购货金额</span>
                             </th>
-                            <th nz-th [nzWidth]="'100px'">
+                            <th nz-th [nzWidth]="'140px'">
                                 <span>备注</span>
                             </th>
-                            <th nz-th>
+                            <th nz-th [nzWidth]="'140px'">
                                 <span>关联销货订单号</span>
                             </th>
+                            <th nz-th></th>
                         </tr>
                     </thead>
                 </ng-template>
@@ -198,30 +199,30 @@
                         <td nz-td>
                             <nz-input *ngIf="userScanner" [nzPlaceHolder]="'商品'"></nz-input>
                             <nz-popover [nzTrigger]="'click'" [nzPlacement]="'bottomLeft'">
-                                    <nz-input nz-popover *ngIf="!userScanner" [(ngModel)]="siteName">
-                                        <ng-template #addOnAfter>选择</ng-template>
-                                    </nz-input>
-                                    <ng-template #nzTemplate>
-                                        <div>
-                                            <p>内容</p>
-                                            <p>内容</p>
-                                        </div>
-                                    </ng-template>
-                                </nz-popover>
+                                <nz-input nz-popover *ngIf="!userScanner" [(ngModel)]="siteName">
+                                    <ng-template #addOnAfter>选择</ng-template>
+                                </nz-input>
+                                <ng-template #nzTemplate>
+                                    <div>
+                                        <p>内容</p>
+                                        <p>内容</p>
+                                    </div>
+                                </ng-template>
+                            </nz-popover>
                         </td>
                         <td nz-td>
                             <nz-input *ngIf="userScanner" [nzPlaceHolder]="'商品编号'"></nz-input>
                             <nz-popover [nzTrigger]="'click'" [nzPlacement]="'bottomLeft'">
-                                    <nz-input nz-popover *ngIf="!userScanner" [(ngModel)]="siteName">
-                                        <ng-template #addOnAfter>批量</ng-template>
-                                    </nz-input>
-                                    <ng-template #nzTemplate>
-                                        <div>
-                                            <p>内容</p>
-                                            <p>内容</p>
-                                        </div>
-                                    </ng-template>
-                                </nz-popover>
+                                <nz-input nz-popover *ngIf="!userScanner" [(ngModel)]="siteName">
+                                    <ng-template #addOnAfter>批量</ng-template>
+                                </nz-input>
+                                <ng-template #nzTemplate>
+                                    <div>
+                                        <p>内容</p>
+                                        <p>内容</p>
+                                    </div>
+                                </ng-template>
+                            </nz-popover>
                         </td>
                         <td nz-td>
                             <nz-input [nzPlaceHolder]="'型号'"></nz-input>
@@ -254,7 +255,7 @@
                             <nz-input [nzPlaceHolder]="'单位'"></nz-input>
                         </td>
                         <td nz-td>
-                            <nz-select style="width:100px;" [nzPlaceHolder]="'选择仓库'" nzAllowClear>
+                            <nz-select style="width:100%;" [nzPlaceHolder]="'选择仓库'" nzAllowClear>
                                 <nz-option [nzLabel]="1" [nzValue]="1" [nzDisabled]="false"></nz-option>
                             </nz-select>
                         </td>
@@ -279,6 +280,7 @@
                         <td nz-td>
                             <nz-input [nzPlaceHolder]="'关联销货订单号'"></nz-input>
                         </td>
+                        <td nz-td></td>
                     </tr>
                     <tr nz-tbody-tr class="hover-tr">
                         <td nz-td class="first-td"></td>
@@ -300,6 +302,7 @@
                         <td nz-td></td>
                         <td nz-td class="text-right">0.00</td>
                         <td nz-td class="text-right">0.00</td>
+                        <td nz-td></td>
                         <td nz-td></td>
                         <td nz-td></td>
                     </tr>

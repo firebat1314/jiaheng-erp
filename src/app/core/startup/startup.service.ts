@@ -69,8 +69,8 @@ export class StartupService {
         // }
         // mock
         const app: any = {
-            name: `jingku-erp`,
-            description: `jingku-erp front-end admin panel`
+            name: `jiaheng-erp`,
+            description: `jiaheng-erp front-end admin panel`
         };
         const user: any = {
             name: 'Admin',
