@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { environment } from '@env/environment';
 // layout
 import { LayoutDefaultComponent } from '../layout/default/default.component';
+import { MainComponent } from '../layout/main/main.component';
 import { LayoutFullScreenComponent } from '../layout/fullscreen/fullscreen.component';
 import { LayoutPassportComponent } from '../layout/passport/passport.component';
 // dashboard pages
@@ -21,7 +22,7 @@ import { ForgetPasswordComponent } from './passport/forget-password/forget-passw
 const routes: Routes = [
     {
         path: '',
-        component: LayoutDefaultComponent,
+        component: MainComponent,/*  LayoutDefaultComponent */
         children: [
             // 业务子模块
             { path: '', redirectTo: 'home', pathMatch: 'full' },

@@ -1,0 +1,80 @@
+<div class="router-progress-bar" *ngIf="isFetching">
+</div>
+<nz-layout style="height: 100%;" class="s-main-wraper">
+    <nz-sider nzCollapsible nzBreakpoint='xl' [nzWidth]="150" [(nzCollapsed)]="isCollapsed" [nzTrigger]="null">
+        <div class="logo">
+            <a [routerLink]="['/']">
+                <img [style.display]="isCollapsed?'none':'block'" src="./assets/img/jiaheng_logo.png" alt="{{settings.app.name}}" />
+                <img [style.display]="isCollapsed?'block':'none'" src="./assets/img/jiaheng_logo_small.png" alt="{{settings.app.name}}" />
+            </a>
+        </div>
+        <ul nz-menu style="background: #4397cd;" [nzMode]="isCollapsed?'vertical':'inline'" class="s-menu">
+            <li nz-menu-item *ngFor="let item of [{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{}]">
+                <span title>
+                    <i class="anticon anticon-user"></i>
+                    <span class="nav-text">电商</span>
+                </span>
+            </li>
+            <li nz-menu-item>
+                <span title>
+                    <i class="anticon anticon-team"></i>
+                    <span class="nav-text">电商</span>
+                </span>
+            </li>
+            <li nz-menu-item>
+                <span>
+                    <i class="anticon anticon-file"></i>
+                    <span class="nav-text">电商</span>
+                </span>
+            </li>
+        </ul>
+    </nz-sider>
+    <nz-layout>
+        <nz-header class="s-main-header d-flex align-items-center justify-content-between" style="background: #fff; padding:0;border-bottom: 1px solid #e0e0e0;">
+            <ul class="left d-flex align-items-center">
+                <li>
+                    <i class="anticon trigger" [class.anticon-menu-fold]="!isCollapsed" [class.anticon-menu-unfold]="isCollapsed" (click)="isCollapsed=!isCollapsed"></i>
+                </li>
+                <li class="name">嘉恒ERP</li>
+            </ul>
+            <ul class="right d-flex align-items-center">
+                <li class="hidden-xs item">
+                    <nz-input-group style="width:300px" [nzSize]="'large'" nzCompact>
+                        <nz-select [ngModel]="'搜库存'" style="width: 30%;">
+                            <nz-option [nzLabel]="'搜库存'" [nzValue]="'搜库存'"></nz-option>
+                            <nz-option [nzLabel]="'搜商品'" [nzValue]="'搜商品'"></nz-option>
+                        </nz-select>
+                        <input [ngModel]="'123'" style="width: 70%;" nz-input>
+                    </nz-input-group>
+                </li>
+                <li class="hidden-xs item">
+                    <header-user class="ml-sm"></header-user>
+                </li>
+                <li class="hidden-xs item">
+                    <i class="anticon anticon-customer-service"></i>
+                </li>
+                <li class="hidden-xs item">
+                    <header-notify></header-notify>
+                </li>
+                <li class="item">
+                    <i class="anticon anticon-question-circle-o"></i>
+                </li>
+                <li class="hidden-xs item">
+                    <i class="anticon anticon-left-circle-o"></i>
+                </li>
+                <li class="item" (click)="loginOut()">
+                    <i class="anticon anticon-poweroff"></i>
+                </li>
+            </ul>
+        </nz-header>
+        <nz-content style="position: relative;">
+            <reuse-tab class="reuse-tab" style="margin: 0;" [fixed]="false" [max]="30"></reuse-tab>
+            <div style="overflow: auto;position: absolute;height: calc(100% - 43px);width: 100%;" #divTarget>
+                <div class="m-md">
+                    <nz-back-top [nzTarget]="divTarget"></nz-back-top>
+                    <router-outlet></router-outlet>
+                </div>
+            </div>
+        </nz-content>
+    </nz-layout>
+</nz-layout>

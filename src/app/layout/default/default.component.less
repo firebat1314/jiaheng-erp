@@ -103,6 +103,21 @@
         .content {
             reuse-tab {
                 padding: 0 !important;
+                .ant-tabs-nav-container {
+                    margin-bottom: 0;
+                    .ant-tabs-nav-wrap {
+                        margin-bottom: 0;
+                    }
+                    .name {
+                        height: 52px;
+                        display: flex;
+                        padding: 0;
+                        justify-content: center;
+                        align-items: center;
+                        height: 42px;
+                        padding: 0 28px;
+                    }
+                }
                 .ant-tabs-bar {
                     .ant-tabs-extra-content {
                         margin-top: 7px;
@@ -110,11 +125,8 @@
                     }
                 }
                 .ant-tabs-nav .ant-tabs-tab {
-                    height: 47px;
-                    line-height: 33px;
                     border-right: 1px solid #e0e0e0;
                     margin-right: 0;
-                    padding: 8px 30px 8px 16px;
                     .op {
                         top: 19px;
                         right: 7px;

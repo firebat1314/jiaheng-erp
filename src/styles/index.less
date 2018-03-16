@@ -3,6 +3,31 @@ body {
     background: #fafafa !important;
 }
 
+
+/*整体部分*/
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+
+/*滑动轨道*/
+
+ ::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.06);
+}
+
+
+/*滑块*/
+
+ ::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.08);
+    &:hover {
+        background: rgba(0, 0, 0, 0.15);
+    }
+}
+
 .wrapper {
     >.content {
         margin-top: 134px;
@@ -23,29 +48,29 @@ body {
 }
 
 .power-search-modal {
-   .ant-modal-content {
-       .ant-modal-header {
-           .ant-modal-title {}
-       }
-       .ant-modal-body {
-           display: flex;
-           justify-content: space-between;
-           flex-wrap: wrap;
-           .item {
-               width: calc(~'50% - 12px');
-               display: flex;
-               align-items: center;
-               margin-bottom: 10px;
-               flex-wrap: nowrap;
-               >span:first-of-type {
-                   min-width: 100px;
-               }
-           }
-       }
-       .ant-modal-footer {
-           text-align: right;
-           display: flex;
-           justify-content: space-between;
-       }
-   }
+    .ant-modal-content {
+        .ant-modal-header {
+            .ant-modal-title {}
+        }
+        .ant-modal-body {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            .item {
+                width: calc(~'50% - 12px');
+                display: flex;
+                align-items: center;
+                margin-bottom: 10px;
+                flex-wrap: nowrap;
+                >span:first-of-type {
+                    min-width: 100px;
+                }
+            }
+        }
+        .ant-modal-footer {
+            text-align: right;
+            display: flex;
+            justify-content: space-between;
+        }
+    }
 }
