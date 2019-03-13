@@ -22,7 +22,7 @@ import { ForgetPasswordComponent } from './passport/forget-password/forget-passw
 const routes: Routes = [
     {
         path: '',
-        component: MainComponent,/*  LayoutDefaultComponent */
+        component: LayoutDefaultComponent,/*  LayoutDefaultComponent */
         children: [
             // 业务子模块
             { path: '', redirectTo: 'home', pathMatch: 'full' },

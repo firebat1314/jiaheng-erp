@@ -12,7 +12,7 @@ export class MainComponent {
 
     isFetching = false;
     meun: Menu[] = []
-
+    isCollapsed
     constructor(
         private router: Router,
         scroll: ScrollService,
